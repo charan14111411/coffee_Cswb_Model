@@ -1,4 +1,10 @@
-﻿Data/
+# Data (shared separately as a zip, not via Git)
+CSWB DATA/
+Final_cwsb_Data/
+Final_cwsb_Data*/
+*.zip
+
+# Python
 venv/
 .venv/
 __pycache__/
