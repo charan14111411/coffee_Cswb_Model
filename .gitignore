@@ -2,9 +2,15 @@
 CSWB DATA/
 Final_cwsb_Data/
 Final_cwsb_Data*/
+Data_final/
+work/
+models/
+test/
 *.zip
+*.pt
 
 # Python
 venv/
 .venv/
 __pycache__/
+test2/
