@@ -1,0 +1,145 @@
+sample,truth,score,verdict,outcome,lighting,source,split,plant,blur,clipped,origin
+t2_001.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,152.19,0.0,Unhealthy/CB_DSC_0147.jpg
+t2_002.jpg,Unhealthy,0.6026,NO_SIGNS,MISS,normal,dsc-camera,test,plant_042,1842.65,0.0001,Unhealthy/CB_DSC00981.jpg
+t2_003.jpg,Unhealthy,0.9993,WSB_LIKELY,correct,normal,dsc-camera,test,plant_036,4405.0,0.0007,Unhealthy/CB_5_DSC01037.jpg
+t2_004.jpg,Unhealthy,0.9993,WSB_LIKELY,correct,normal,field-camera,val,plant_047,454.48,0.001,Unhealthy/FIELD_IMG_1293.jpg
+t2_005.jpg,Unhealthy,0.947,WSB_LIKELY,correct,normal,field-camera,val,plant_047,400.64,0.0012,Unhealthy/FIELD_IMG_1283.jpg
+t2_006.jpg,Unhealthy,0.9989,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,7562.53,0.0227,Unhealthy/CB_DSC_0154.jpg
+t2_007.jpg,Unhealthy,0.9993,WSB_LIKELY,correct,normal,field-camera,test,plant_054,5799.7,0.0077,Unhealthy/FIELD_IMG_1660.jpg
+t2_008.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,5675.7,0.006,Unhealthy/FIELD_IMG_1674.jpg
+t2_009.jpg,Unhealthy,0.9989,WSB_LIKELY,correct,normal,dsc-camera,test,plant_023,8361.73,0.0047,Unhealthy/CB_4_DSC00971.jpg
+t2_010.jpg,Unhealthy,0.9992,WSB_LIKELY,correct,normal,dsc-camera,test,plant_042,3578.85,0.0061,Unhealthy/CB_DSC00974.jpg
+t2_011.jpg,Unhealthy,0.8683,NO_SIGNS,MISS,normal,dsc-camera,test,plant_012,321.92,0.0002,Unhealthy/CB_2_DSC01031.jpg
+t2_012.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,test,plant_054,11018.89,0.0081,Unhealthy/FIELD_IMG_1670.jpg
+t2_013.jpg,Unhealthy,0.9976,WSB_LIKELY,correct,normal,dsc-camera,val,plant_020,1500.6,0.0009,Unhealthy/CB_3_DSC01026.jpg
+t2_014.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,7338.28,0.0018,Unhealthy/CB_DSC_0132.jpg
+t2_015.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,6302.93,0.0066,Unhealthy/FIELD_IMG_1666.jpg
+t2_016.jpg,Unhealthy,0.9804,WSB_LIKELY,correct,normal,field-camera,val,plant_050,2674.11,0.0017,Unhealthy/FIELD_IMG_1420.jpg
+t2_017.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,15691.43,0.0001,Unhealthy/CB_DSC_0133.jpg
+t2_018.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,val,plant_047,1066.36,0.0037,Unhealthy/FIELD_IMG_1279.jpg
+t2_019.jpg,Unhealthy,0.9987,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,2665.17,0.0,Unhealthy/CB_DSC_0142.jpg
+t2_020.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,test,plant_054,6517.53,0.0061,Unhealthy/FIELD_IMG_1668.jpg
+t2_021.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,5096.6,0.0074,Unhealthy/FIELD_IMG_1671.jpg
+t2_022.jpg,Healthy,0.1262,NO_SIGNS,correct,normal,phone-timestamp,val,plant_006,2816.19,0.0136,Healthy/CB_IMG_20170725_104812.jpg
+t2_023.jpg,Unhealthy,0.9765,WSB_LIKELY,correct,normal,dsc-camera,val,plant_044,6326.21,0.0225,Unhealthy/CB_DSC01040.jpg
+t2_024.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,8889.31,0.0332,Unhealthy/FIELD_IMG_1675.jpg
+t2_025.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9024.47,0.0195,Unhealthy/FIELD_IMG_1658.jpg
+t2_026.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,dsc-camera,test,plant_023,606.55,0.0195,Unhealthy/CB_4_DSC00970.jpg
+t2_027.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,dsc-camera,test,plant_042,133.86,0.0146,Unhealthy/CB_DSC00983.jpg
+t2_028.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,589.48,0.0039,Unhealthy/CB_DSC_0137.jpg
+t2_029.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,6089.9,0.0053,Unhealthy/FIELD_IMG_1659.jpg
+t2_030.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,6218.11,0.0,Unhealthy/CB_DSC_0136.jpg
+t2_031.jpg,Healthy,0.975,WSB_LIKELY,FALSE_ALARM,normal,dsc-camera,test,plant_003,6414.82,0.0075,Healthy/CB_DSC_0285.jpg
+t2_032.jpg,Unhealthy,0.9954,WSB_LIKELY,correct,normal,field-camera,val,plant_050,22602.22,0.0023,Unhealthy/FIELD_IMG_1410.jpg
+t2_033.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,121.98,0.0001,Unhealthy/CB_DSC_0140.jpg
+t2_034.jpg,Unhealthy,0.9813,WSB_LIKELY,correct,normal,field-camera,val,plant_047,278.95,0.0002,Unhealthy/FIELD_IMG_1282.jpg
+t2_035.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,val,plant_050,1107.07,0.0002,Unhealthy/FIELD_IMG_1414.jpg
+t2_036.jpg,Unhealthy,0.8354,NO_SIGNS,MISS,normal,field-camera,val,plant_050,1122.49,0.0001,Unhealthy/FIELD_IMG_1411.jpg
+t2_037.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9255.36,0.0078,Unhealthy/FIELD_IMG_1665.jpg
+t2_038.jpg,Unhealthy,0.0147,NO_SIGNS,MISS,normal,dsc-camera,test,plant_012,316.64,0.0001,Unhealthy/CB_2_DSC01027.jpg
+t2_039.jpg,Unhealthy,0.9971,WSB_LIKELY,correct,normal,field-camera,val,plant_047,714.69,0.0018,Unhealthy/FIELD_IMG_1285.jpg
+t2_040.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,556.12,0.0003,Unhealthy/CB_DSC_0149.jpg
+t2_041.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,3851.58,0.0025,Unhealthy/CB_DSC_0143.jpg
+t2_042.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,test,plant_054,12167.23,0.0103,Unhealthy/FIELD_IMG_1679.jpg
+t2_043.jpg,Unhealthy,0.999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,9572.9,0.0085,Unhealthy/CB_DSC_0145.jpg
+t2_044.jpg,Unhealthy,0.9434,WSB_LIKELY,correct,normal,phone-timestamp,test,plant_077,997.65,0.0316,Unhealthy/CB_IMG_20170725_104746.jpg
+t2_045.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,val,plant_047,2925.05,0.0021,Unhealthy/FIELD_IMG_1292.jpg
+t2_046.jpg,Healthy,0.2536,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,3448.64,0.0022,Healthy/CB_DSC_0293.jpg
+t2_047.jpg,Unhealthy,0.7351,NO_SIGNS,MISS,normal,dsc-camera,val,plant_044,247.61,0.0042,Unhealthy/CB_DSC01042.jpg
+t2_048.jpg,Unhealthy,0.9995,WSB_LIKELY,correct,normal,field-camera,test,plant_054,8450.25,0.0112,Unhealthy/FIELD_IMG_1661.jpg
+t2_049.jpg,Unhealthy,0.9994,WSB_LIKELY,correct,normal,field-camera,test,plant_054,3579.14,0.0028,Unhealthy/FIELD_IMG_1686.jpg
+t2_050.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9510.29,0.0101,Unhealthy/FIELD_IMG_1667.jpg
+t2_051.jpg,Unhealthy,0.9878,WSB_LIKELY,correct,normal,dsc-camera,test,plant_042,1091.07,0.0106,Unhealthy/CB_DSC00982.jpg
+t2_052.jpg,Unhealthy,0.0745,NO_SIGNS,MISS,normal,dsc-camera,test,plant_012,740.31,0.0002,Unhealthy/CB_2_DSC01030.jpg
+t2_053.jpg,Unhealthy,0.9985,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,3221.89,0.0179,Unhealthy/CB_DSC_0144.jpg
+t2_054.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,11662.36,0.0293,Unhealthy/FIELD_IMG_1656.jpg
+t2_055.jpg,Unhealthy,0.7532,NO_SIGNS,MISS,normal,phone-timestamp,val,plant_056,4906.89,0.0162,Unhealthy/CB_2_IMG_20170725_103600.jpg
+t2_056.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,387.58,0.0002,Unhealthy/CB_DSC_0141.jpg
+t2_057.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,8824.62,0.0161,Unhealthy/FIELD_IMG_1664.jpg
+t2_058.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,1089.5,0.0003,Unhealthy/CB_DSC_0150.jpg
+t2_059.jpg,Unhealthy,0.9662,WSB_LIKELY,correct,normal,dsc-camera,val,plant_044,7701.17,0.0252,Unhealthy/CB_DSC01041.jpg
+t2_060.jpg,Unhealthy,0.9993,WSB_LIKELY,correct,normal,dsc-camera,val,plant_021,5420.16,0.0034,Unhealthy/CB_4_DSC_0021.jpg
+t2_061.jpg,Unhealthy,0.8592,NO_SIGNS,MISS,normal,dsc-camera,val,plant_013,3048.49,0.0004,Unhealthy/CB_3_(2).jpg
+t2_062.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,3709.62,0.0288,Unhealthy/FIELD_IMG_1685.jpg
+t2_063.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,10934.03,0.0097,Unhealthy/FIELD_IMG_1663.jpg
+t2_064.jpg,Unhealthy,0.9723,WSB_LIKELY,correct,normal,dsc-camera,val,plant_010,2747.55,0.0017,Unhealthy/CB_2_DSC00989.jpg
+t2_065.jpg,Healthy,0.3354,NO_SIGNS,correct,normal,dsc-camera,val,plant_001,232.7,0.0172,Healthy/CB_3_DSC01010.jpg
+t2_066.jpg,Unhealthy,0.99,WSB_LIKELY,correct,normal,field-camera,val,plant_047,374.25,0.0009,Unhealthy/FIELD_IMG_1284.jpg
+t2_067.jpg,Unhealthy,0.9307,WSB_LIKELY,correct,normal,dsc-camera,val,plant_044,2209.05,0.0014,Unhealthy/CB_DSC01043.jpg
+t2_068.jpg,Unhealthy,0.9453,WSB_LIKELY,correct,normal,dsc-camera,test,plant_042,1175.12,0.0003,Unhealthy/CB_DSC00976.jpg
+t2_069.jpg,Unhealthy,0.9934,WSB_LIKELY,correct,normal,field-camera,val,plant_047,853.86,0.008,Unhealthy/FIELD_IMG_1289.jpg
+t2_070.jpg,Unhealthy,0.9996,WSB_LIKELY,correct,normal,dsc-camera,val,plant_021,6862.2,0.0031,Unhealthy/CB_4_DSC_0020.jpg
+t2_071.jpg,Unhealthy,0.9996,WSB_LIKELY,correct,normal,field-camera,val,plant_047,6453.34,0.0012,Unhealthy/FIELD_IMG_1277.jpg
+t2_072.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,5712.27,0.0,Unhealthy/CB_DSC_0135.jpg
+t2_073.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,6056.22,0.005,Unhealthy/FIELD_IMG_1682.jpg
+t2_074.jpg,Healthy,0.3606,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,6207.69,0.0107,Healthy/CB_DSC_0288.jpg
+t2_075.jpg,Unhealthy,0.8953,NO_SIGNS,MISS,normal,dsc-camera,test,plant_042,3574.52,0.0009,Unhealthy/CB_DSC00980.jpg
+t2_076.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9104.42,0.0381,Unhealthy/FIELD_IMG_1678.jpg
+t2_077.jpg,Healthy,0.2022,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,6376.21,0.0186,Healthy/CB_DSC_0289.jpg
+t2_078.jpg,Healthy,0.1655,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,1595.27,0.0128,Healthy/CB_DSC_0294.jpg
+t2_079.jpg,Healthy,0.2359,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,1346.1,0.0098,Healthy/CB_DSC_0295.jpg
+t2_080.jpg,Unhealthy,0.996,WSB_LIKELY,correct,normal,field-camera,val,plant_047,249.72,0.0024,Unhealthy/FIELD_IMG_1290.jpg
+t2_081.jpg,Healthy,0.2392,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,2732.7,0.0065,Healthy/CB_DSC_0284.jpg
+t2_082.jpg,Unhealthy,0.9962,WSB_LIKELY,correct,normal,field-camera,val,plant_050,2989.03,0.0002,Unhealthy/FIELD_IMG_1422.jpg
+t2_083.jpg,Unhealthy,0.8643,NO_SIGNS,MISS,normal,phone-timestamp,test,plant_063,2380.17,0.0037,Unhealthy/CB_3_IMG_20170705_103633.jpg
+t2_084.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7786.96,0.0069,Unhealthy/FIELD_IMG_1672.jpg
+t2_085.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7132.0,0.0175,Unhealthy/FIELD_IMG_1657.jpg
+t2_086.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7003.29,0.0055,Unhealthy/FIELD_IMG_1669.jpg
+t2_087.jpg,Unhealthy,0.9991,WSB_LIKELY,correct,normal,dsc-camera,val,plant_041,5339.38,0.0061,Unhealthy/CB_DSC_0146.jpg
+t2_088.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,val,plant_050,1644.47,0.0004,Unhealthy/FIELD_IMG_1416.jpg
+t2_089.jpg,Healthy,0.2655,NO_SIGNS,correct,normal,dsc-camera,test,plant_003,3235.89,0.02,Healthy/CB_DSC_0290.jpg
+t2_090.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,16888.1,0.0106,Unhealthy/FIELD_IMG_1655.jpg
+t2_091.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9701.56,0.009,Unhealthy/FIELD_IMG_1662.jpg
+t2_092.jpg,Unhealthy,0.9959,WSB_LIKELY,correct,normal,field-camera,val,plant_047,1107.91,0.0013,Unhealthy/FIELD_IMG_1291.jpg
+t2_093.jpg,Unhealthy,0.9697,WSB_LIKELY,correct,normal,dsc-camera,val,plant_010,2633.17,0.0006,Unhealthy/CB_2_DSC00990.jpg
+t2_094.jpg,Unhealthy,0.9943,WSB_LIKELY,correct,normal,dsc-camera,val,plant_020,924.26,0.0004,Unhealthy/CB_3_DSC01025.jpg
+t2_095.jpg,Unhealthy,0.8376,NO_SIGNS,MISS,normal,dsc-camera,val,plant_044,7243.21,0.0011,Unhealthy/CB_DSC01044.jpg
+t2_096.jpg,Unhealthy,1.0,WSB_LIKELY,correct,normal,field-camera,test,plant_054,10502.41,0.0154,Unhealthy/FIELD_IMG_1681.jpg
+t2_097.jpg,Unhealthy,0.4465,NO_SIGNS,MISS,normal,dsc-camera,test,plant_012,975.55,0.0007,Unhealthy/CB_2_DSC01024.jpg
+t2_098.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7732.8,0.0565,Unhealthy/FIELD_IMG_1677.jpg
+t2_099.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,val,plant_050,3242.14,0.0005,Unhealthy/FIELD_IMG_1421.jpg
+t2_100.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,11655.46,0.0045,Unhealthy/FIELD_IMG_1654.jpg
+t2_101.jpg,Unhealthy,0.8291,NO_SIGNS,MISS,normal,field-camera,val,plant_047,296.3,0.0005,Unhealthy/FIELD_IMG_1281.jpg
+t2_102.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,5885.06,0.0088,Unhealthy/FIELD_IMG_1680.jpg
+t2_103.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,9831.92,0.0134,Unhealthy/FIELD_IMG_1676.jpg
+t2_104.jpg,Unhealthy,0.9993,WSB_LIKELY,correct,normal,dsc-camera,test,plant_023,6764.76,0.0049,Unhealthy/CB_4_DSC00972.jpg
+t2_105.jpg,Unhealthy,0.9985,WSB_LIKELY,correct,normal,dsc-camera,test,plant_023,2362.6,0.0071,Unhealthy/CB_4_DSC00973.jpg
+t2_106.jpg,Unhealthy,0.9998,WSB_LIKELY,correct,normal,field-camera,val,plant_050,1998.79,0.0014,Unhealthy/FIELD_IMG_1415.jpg
+t2_107.jpg,Unhealthy,0.8724,NO_SIGNS,MISS,normal,field-camera,val,plant_047,243.52,0.0001,Unhealthy/FIELD_IMG_1287.jpg
+t2_108.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7600.54,0.0087,Unhealthy/FIELD_IMG_1687.jpg
+t2_109.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,val,plant_047,999.71,0.0124,Unhealthy/FIELD_IMG_1280.jpg
+t2_110.jpg,Unhealthy,0.9877,WSB_LIKELY,correct,normal,field-camera,test,plant_054,10405.25,0.0082,Unhealthy/FIELD_IMG_1673.jpg
+t2_111.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,normal,field-camera,test,plant_054,5595.58,0.0097,Unhealthy/FIELD_IMG_1683.jpg
+t2_112.jpg,Unhealthy,0.9943,WSB_LIKELY,correct,normal,field-camera,val,plant_050,25045.38,0.0036,Unhealthy/FIELD_IMG_1409.jpg
+t2_113.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,normal,field-camera,test,plant_054,7701.14,0.0068,Unhealthy/FIELD_IMG_1684.jpg
+t2_114.jpg,Unhealthy,0.9978,WSB_LIKELY,correct,normal,field-camera,val,plant_047,3725.21,0.0025,Unhealthy/FIELD_IMG_1278.jpg
+t2_115.jpg,Healthy,0.3855,NO_SIGNS,correct,simulated-bright,dsc-camera,test,plant_003,6207.69,0.0107,t2_074.jpg (simulated)
+t2_116.jpg,Healthy,0.9707,WSB_LIKELY,FALSE_ALARM,simulated-bright,dsc-camera,test,plant_003,6414.82,0.0075,t2_031.jpg (simulated)
+t2_117.jpg,Healthy,0.0883,NO_SIGNS,correct,simulated-bright,phone-timestamp,val,plant_006,2816.19,0.0136,t2_022.jpg (simulated)
+t2_118.jpg,Healthy,0.4211,NO_SIGNS,correct,simulated-bright,dsc-camera,test,plant_003,3235.89,0.02,t2_089.jpg (simulated)
+t2_119.jpg,Healthy,0.1671,NO_SIGNS,correct,simulated-bright,dsc-camera,test,plant_003,3448.64,0.0022,t2_046.jpg (simulated)
+t2_120.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,simulated-bright,dsc-camera,val,plant_041,1089.5,0.0003,t2_058.jpg (simulated)
+t2_121.jpg,Unhealthy,0.0922,NO_SIGNS,MISS,simulated-bright,dsc-camera,test,plant_012,740.31,0.0002,t2_052.jpg (simulated)
+t2_122.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,simulated-bright,dsc-camera,val,plant_041,5712.27,0.0,t2_072.jpg (simulated)
+t2_123.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,simulated-bright,field-camera,test,plant_054,3579.14,0.0028,t2_049.jpg (simulated)
+t2_124.jpg,Unhealthy,0.9999,WSB_LIKELY,correct,simulated-bright,dsc-camera,val,plant_041,15691.43,0.0001,t2_017.jpg (simulated)
+t2_125.jpg,Unhealthy,1.0,WSB_LIKELY,correct,simulated-bright,field-camera,test,plant_054,9831.92,0.0134,t2_103.jpg (simulated)
+t2_126.jpg,Unhealthy,0.9986,WSB_LIKELY,correct,simulated-bright,dsc-camera,test,plant_023,606.55,0.0195,t2_026.jpg (simulated)
+t2_127.jpg,Unhealthy,0.9997,WSB_LIKELY,correct,simulated-bright,field-camera,test,plant_054,9255.36,0.0078,t2_037.jpg (simulated)
+t2_128.jpg,Unhealthy,0.9985,WSB_LIKELY,correct,simulated-bright,dsc-camera,val,plant_021,5420.16,0.0034,t2_060.jpg (simulated)
+t2_129.jpg,Unhealthy,0.6006,NO_SIGNS,MISS,simulated-bright,dsc-camera,test,plant_042,1842.65,0.0001,t2_002.jpg (simulated)
+t2_130.jpg,Healthy,0.1192,NO_SIGNS,correct,simulated-dark,dsc-camera,val,plant_001,232.7,0.0172,t2_065.jpg (simulated)
+t2_131.jpg,Healthy,0.025,NO_SIGNS,correct,simulated-dark,dsc-camera,test,plant_003,1346.1,0.0098,t2_079.jpg (simulated)
+t2_132.jpg,Healthy,0.0043,NO_SIGNS,correct,simulated-dark,phone-timestamp,val,plant_006,2816.19,0.0136,t2_022.jpg (simulated)
+t2_133.jpg,Healthy,0.0123,NO_SIGNS,correct,simulated-dark,dsc-camera,test,plant_003,2732.7,0.0065,t2_081.jpg (simulated)
+t2_134.jpg,Healthy,0.0142,NO_SIGNS,correct,simulated-dark,dsc-camera,test,plant_003,1595.27,0.0128,t2_078.jpg (simulated)
+t2_135.jpg,Unhealthy,0.7189,NO_SIGNS,MISS,simulated-dark,field-camera,val,plant_047,296.3,0.0005,t2_101.jpg (simulated)
+t2_136.jpg,Unhealthy,0.6467,NO_SIGNS,MISS,simulated-dark,dsc-camera,test,plant_042,1175.12,0.0003,t2_068.jpg (simulated)
+t2_137.jpg,Unhealthy,1.0,WSB_LIKELY,correct,simulated-dark,field-camera,test,plant_054,8824.62,0.0161,t2_057.jpg (simulated)
+t2_138.jpg,Unhealthy,0.984,WSB_LIKELY,correct,simulated-dark,dsc-camera,test,plant_036,4405.0,0.0007,t2_003.jpg (simulated)
+t2_139.jpg,Unhealthy,0.9987,WSB_LIKELY,correct,simulated-dark,dsc-camera,val,plant_021,6862.2,0.0031,t2_070.jpg (simulated)
+t2_140.jpg,Unhealthy,1.0,WSB_LIKELY,correct,simulated-dark,field-camera,test,plant_054,9701.56,0.009,t2_091.jpg (simulated)
+t2_141.jpg,Unhealthy,0.9977,WSB_LIKELY,correct,simulated-dark,dsc-camera,test,plant_023,6764.76,0.0049,t2_104.jpg (simulated)
+t2_142.jpg,Unhealthy,0.9122,INCONCLUSIVE,inconclusive,simulated-dark,dsc-camera,val,plant_044,7701.17,0.0252,t2_059.jpg (simulated)
+t2_143.jpg,Unhealthy,0.9994,WSB_LIKELY,correct,simulated-dark,field-camera,test,plant_054,3579.14,0.0028,t2_049.jpg (simulated)
+t2_144.jpg,Unhealthy,0.9991,WSB_LIKELY,correct,simulated-dark,field-camera,val,plant_047,999.71,0.0124,t2_109.jpg (simulated)

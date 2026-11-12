@@ -1,0 +1,60 @@
+sample,truth,score,verdict,mark,lighting,source,split,plant,simulated
+t2_002.jpg,Unhealthy,0.602633535861969,INCONCLUSIVE - retake,inconclusive,normal,dsc-camera,test,plant_042,False
+t2_003.jpg,Unhealthy,0.9993219375610352,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_036,False
+t2_007.jpg,Unhealthy,0.9993034601211548,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_008.jpg,Unhealthy,0.999903678894043,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_009.jpg,Unhealthy,0.9989315867424011,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_023,False
+t2_010.jpg,Unhealthy,0.9991509914398193,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_042,False
+t2_011.jpg,Unhealthy,0.8682694435119629,INCONCLUSIVE - retake,inconclusive,normal,dsc-camera,test,plant_012,False
+t2_012.jpg,Unhealthy,0.9996870756149292,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_015.jpg,Unhealthy,0.9999691247940063,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_020.jpg,Unhealthy,0.999703586101532,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_021.jpg,Unhealthy,0.9999649524688721,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_024.jpg,Unhealthy,0.9998927116394043,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_025.jpg,Unhealthy,0.9996763467788696,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_026.jpg,Unhealthy,0.9996618032455444,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_023,False
+t2_027.jpg,Unhealthy,0.9997051358222961,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_042,False
+t2_029.jpg,Unhealthy,0.9999008178710938,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_031.jpg,Healthy,0.975031316280365,WSB SIGNS LIKELY,WRONG,normal,dsc-camera,test,plant_003,False
+t2_037.jpg,Unhealthy,0.9997705817222595,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_038.jpg,Unhealthy,0.014730413444340229,No visible WSB signs,WRONG,normal,dsc-camera,test,plant_012,False
+t2_042.jpg,Unhealthy,0.9998346567153931,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_044.jpg,Unhealthy,0.9434037208557129,WSB SIGNS LIKELY,CORRECT,normal,phone-timestamp,test,plant_077,False
+t2_046.jpg,Healthy,0.25363874435424805,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_048.jpg,Unhealthy,0.9995388984680176,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_049.jpg,Unhealthy,0.9993990659713745,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_050.jpg,Unhealthy,0.999901533126831,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_051.jpg,Unhealthy,0.9878107309341431,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_042,False
+t2_052.jpg,Unhealthy,0.07454992085695267,No visible WSB signs,WRONG,normal,dsc-camera,test,plant_012,False
+t2_054.jpg,Unhealthy,0.9998834133148193,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_057.jpg,Unhealthy,0.9999736547470093,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_062.jpg,Unhealthy,0.9999674558639526,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_063.jpg,Unhealthy,0.9998977184295654,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_068.jpg,Unhealthy,0.9453260898590088,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_042,False
+t2_073.jpg,Unhealthy,0.9999140501022339,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_074.jpg,Healthy,0.3605927526950836,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_075.jpg,Unhealthy,0.8953439593315125,INCONCLUSIVE - retake,inconclusive,normal,dsc-camera,test,plant_042,False
+t2_076.jpg,Unhealthy,0.9999513626098633,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_077.jpg,Healthy,0.20221126079559326,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_078.jpg,Healthy,0.16552375257015228,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_079.jpg,Healthy,0.235856831073761,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_081.jpg,Healthy,0.23919536173343658,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_083.jpg,Unhealthy,0.8642863631248474,INCONCLUSIVE - retake,inconclusive,normal,phone-timestamp,test,plant_063,False
+t2_084.jpg,Unhealthy,0.9999191761016846,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_085.jpg,Unhealthy,0.9999605417251587,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_086.jpg,Unhealthy,0.9999010562896729,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_089.jpg,Healthy,0.26550036668777466,No visible WSB signs,CORRECT,normal,dsc-camera,test,plant_003,False
+t2_090.jpg,Unhealthy,0.9998793601989746,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_091.jpg,Unhealthy,0.9999734163284302,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_096.jpg,Unhealthy,0.999958872795105,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_097.jpg,Unhealthy,0.44654425978660583,No visible WSB signs,WRONG,normal,dsc-camera,test,plant_012,False
+t2_098.jpg,Unhealthy,0.999893307685852,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_100.jpg,Unhealthy,0.9999065399169922,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_102.jpg,Unhealthy,0.9998674392700195,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_103.jpg,Unhealthy,0.9999414682388306,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_104.jpg,Unhealthy,0.9993280172348022,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_023,False
+t2_105.jpg,Unhealthy,0.9984833598136902,WSB SIGNS LIKELY,CORRECT,normal,dsc-camera,test,plant_023,False
+t2_108.jpg,Unhealthy,0.9997201561927795,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_110.jpg,Unhealthy,0.9876712560653687,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_111.jpg,Unhealthy,0.9997221827507019,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
+t2_113.jpg,Unhealthy,0.9999468326568604,WSB SIGNS LIKELY,CORRECT,normal,field-camera,test,plant_054,False
