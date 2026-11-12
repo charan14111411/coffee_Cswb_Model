@@ -243,6 +243,9 @@ Downscaling costs about two points. Do not shrink aggressively for speed in the 
   "this month means infected". Use them as a **separate, displayed risk score**, not fused
   into the CNN.
 - **Training happens on Colab GPU only.**
+- **Classification only** (Charan, 2026-11-12). The project builds a healthy-vs-infected image
+  classifier. Object detection (YOLO / bounding boxes) is not being pursued. The photos in
+  `external_repo/` are treated only as stem close-up photos, not as a detection dataset.
 
 ---
 

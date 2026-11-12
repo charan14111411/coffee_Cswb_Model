@@ -314,3 +314,21 @@ CPU-only.
 
 Please do not add the external close-ups to the Unhealthy class either, for the reasons
 above. The measurement is reproducible from `reports/v1_on_external_yolo_closeups.csv`.
+
+---
+
+## 2026-11-12 (sixth session) — Decision: classification only, no YOLO
+
+Charan decided the project stays a **classification** model. The YOLO / object-detection
+route I suggested in the earlier entries today is dropped. Those entries are left as
+history; read any "stem detector" or "YOLO route" suggestion in them as withdrawn.
+
+- Added the decision to PROJECT_STATE.md section 9 (locked decisions).
+- The `external_repo/` photos remain usable only as plain stem close-up photos (all
+  infected), e.g. as wrong-framing examples for a framing-gate *classifier*.
+- Nothing measured, nothing built this session.
+
+### For Leela
+
+Classification only from here on — please don't plan detection work on the strength of
+my earlier notes.
