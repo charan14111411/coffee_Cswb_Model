@@ -81,3 +81,74 @@ failure is a data/framing problem, not something to tune away.
    `src/`, in Git and on disk. I corrected the count. If two scripts exist on your machine
    and were never committed, please push them.
 3. The pendrive is not needed for my side — everything on the transfer list is already here.
+
+---
+
+## 2026-11-12 (second session) — Reviewed the external YOLOv8 repo
+
+Charan's team lead pointed to an existing YOLO approach. It was downloaded (GitHub zip,
+commit `0b27cd4`) into `external_repo/Detection-of-white-stem-borer-using-YoloV8/`.
+The folder is in `.gitignore` (118 MB), so it does **not** travel by Git.
+
+### What it is
+
+- YOLOv8s **object detector** (11.1M parameters), trained in Colab on 2023-09-12,
+  100 epochs, image size 416, starting from `yolov8s.pt`. Weights are included:
+  `runs/detect/train/weights/best.pt`.
+- Dataset is a Roboflow export (`capstone2-kvkgn/wsb_2`, version 2, CC BY 4.0), 640×640.
+- Three box classes: `hole` (exit holes), `ring` (stem ridges), `worm` (larva in split stem).
+- The photos are **stem close-ups and trunk shots** — the exact view our classifier never saw.
+
+### What I counted
+
+| Split | Images | Boxes | hole | ring | worm |
+|---|---|---|---|---|---|
+| train | 422 | 1306 | 706 | 583 | 17 |
+| valid | 41 | 134 | 64 | 70 | 0 |
+| test | 22 | 66 | 33 | 31 | 2 |
+| **total** | **485** | **1506** | 803 | 684 | 19 |
+
+- **Healthy: 0. Infected: 485.** Every image has at least one box; there is no healthy
+  class and not a single empty-label (background) image.
+- The 485 images come from only **212 unique source photos**; Roboflow augmentation made
+  up to 3 copies of each in train. No source photo appears in more than one split.
+- Number of distinct *plants* is not recorded anywhere in the repo.
+- Boxes are small: median box covers 0.3–0.5% of the image.
+
+### Its reported results (validation, 41 images, from the notebook output)
+
+| Class | Precision | Recall | mAP50 | mAP50-95 |
+|---|---|---|---|---|
+| all | 0.80 | 0.64 | 0.70 | 0.30 |
+| hole | 0.83 | 0.59 | 0.65 | 0.24 |
+| ring | 0.78 | 0.69 | 0.75 | 0.35 |
+
+`worm` has zero validation examples, so it was never evaluated. The confusion matrix shows
+33% of holes and 26% of rings missed. These are the repo's own numbers; I did not re-run
+the model.
+
+### What this means for us
+
+- It is complementary, not a replacement: it finds the diagnostic marks on a stem; ours
+  judges whole-plant condition. It directly addresses "stem close-ups" in Priority 1.
+- It has the same blind spot in a different form: **with no healthy stems in training or
+  validation, its false-alarm rate on clean stems is unmeasured.** Mossy bark, pruning
+  scars and natural bark cracks are untested.
+- A val set of 41 images is too small to trust the 0.70 mAP to better than roughly ±0.1.
+
+### What did not work / was not done
+
+- Did not run `best.pt` on anything. `ultralytics` is not installed here. The obvious next
+  measurement is to run it on `test_new/` (19 uninfested close-ups) to see how many false
+  boxes it draws on healthy stems — that is the number the repo cannot give.
+- Small data hygiene issues found in the download: a stray `abcdef.txt` in
+  `data/train/images/`, and two label files with no `.txt` extension
+  (`train/labels/1_JPG.rf.f60c…`, `test/labels/15_jpg.rf.4f7f…`) which YOLO will ignore.
+
+### For Leela
+
+1. The YOLO repo is public: `Detection-of-white-stem-borer-using-YoloV8` on GitHub
+   (commit `0b27cd4`); the dataset is on Roboflow Universe at `capstone2-kvkgn/wsb_2`.
+   Download it to `external_repo/` if you want to look. 212 real stem close-up photos with
+   hole/ring boxes, CC BY 4.0 — usable as the "stem close-up" class for the framing gate
+   and as a start on close-up evidence, but it adds **zero** healthy examples.

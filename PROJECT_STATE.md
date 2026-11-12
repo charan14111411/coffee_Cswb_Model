@@ -260,7 +260,10 @@ coffee_Cswb_Model/
 │                   training_result.json, ood_reference.npz   (NOT in Git)
 ├── test/           12 blind samples + answer_key.csv, 67 MB  (NOT in Git)
 ├── test2/          144 images + answer_key2.csv, 54 MB       (NOT in Git)
-└── test_new/       30 user photos, 152 MB                    (NOT in Git)
+├── test_new/       30 user photos, 152 MB                    (NOT in Git)
+└── external_repo/  third-party YOLOv8 WSB stem detector, 118 MB (NOT in Git)
+                    485 stem close-ups (212 unique), boxes: hole/ring/worm,
+                    0 healthy images. Reviewed in charan_working.md 2026-11-12
 ```
 
 Anything marked NOT in Git has to be transferred by pendrive or cloud drive. See the

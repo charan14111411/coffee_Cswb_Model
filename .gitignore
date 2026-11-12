@@ -8,7 +8,7 @@ models/
 test/
 *.zip
 *.pt
-
+external_repo*/
 test2/
 test_new/
 
