@@ -260,3 +260,57 @@ Charan asked for the v1 data as `healthy/{train,test,valid}` and
 `Data_v1_split/` is a convenience copy only and is not in Git. To make the same folder on
 your machine, copy each file in `splits/split_v1.csv` from `work/clean/` into
 `<class>/<set>/` (val → `valid`).
+
+---
+
+## 2026-11-12 (fifth session) — Should the YOLO close-ups go into the Unhealthy class? (No)
+
+Charan asked whether the external repo's train/valid/test images can be added to
+`Data_v1_split/unhealthy/` and the model retrained. I did **not** merge them and did
+**not** retrain. Reason, with a measurement:
+
+### What I measured
+
+Scored the external stem close-ups with the unchanged v1 model (`contender_B.pt`,
+thresholds 0.50 / 0.90), one copy per source photo — 211 photos. Scores saved to
+`reports/v1_on_external_yolo_closeups.csv`.
+
+| Verdict | Photos |
+|---|---|
+| WSB likely (≥ 0.90) | 202 (96%) |
+| Inconclusive | 5 |
+| No visible signs | 4 |
+
+Median score 0.999.
+
+Put next to the earlier result (19 of 19 **uninfested** close-ups in `test_new/` also
+scored 0.98–1.00), this says v1 calls a close-up "infected" whether it is or not. It is
+answering "is this a close-up", not "is there borer damage".
+
+### Why adding them would hurt
+
+- Every close-up we have with a label is infected; there is not one healthy close-up.
+  Training on them teaches "close-up = infected" even harder — the exact failure in
+  PROJECT_STATE section 7 item 3.
+- The model already scores them 0.999, so there is nothing for it to learn from them
+  about infection.
+- The test numbers would go *up* (more easy infected photos caught) while the model got
+  no better — a misleading improvement.
+- 485 images are only ~212 photos; the rest are augmented copies, which would be
+  over-weighted, and copies of one photo must not be spread carelessly across sets.
+
+### What the close-ups are good for instead
+
+- Wrong-framing examples for the framing gate (Priority 2): "this is a close-up, not a
+  whole-plant photo".
+- The stem-evidence detector (YOLO route), once healthy stem close-ups exist as negatives.
+
+### Not done
+
+No retrain. It also cannot be run here: training is Colab-GPU only and this machine is
+CPU-only.
+
+### For Leela
+
+Please do not add the external close-ups to the Unhealthy class either, for the reasons
+above. The measurement is reproducible from `reports/v1_on_external_yolo_closeups.csv`.
