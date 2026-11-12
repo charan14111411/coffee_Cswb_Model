@@ -152,3 +152,87 @@ the model.
    Download it to `external_repo/` if you want to look. 212 real stem close-up photos with
    hole/ring boxes, CC BY 4.0 — usable as the "stem close-up" class for the framing gate
    and as a start on close-up evidence, but it adds **zero** healthy examples.
+
+---
+
+## 2026-11-12 (third session) — Retraining notebook for future data
+
+Charan asked: when new healthy / unhealthy photos arrive, how do we train them into
+`contender_B`? The existing pipeline could do it but had four problems for a second run:
+it overwrote `models/v1/`, re-splitting would reshuffle the test set, thresholds were
+hard-coded, and it had no way to compare the new model with the old one.
+
+### What I built
+
+**`colab/CWSB_retrain_colab.ipynb`** — one self-contained notebook (no `%%writefile`, no
+dependency on `src/`). Edit the CONFIG cell (`VERSION`, `DATA_SOURCES`), Run all.
+
+- Takes a list of zips/folders (`Data_final.zip` + each new delivery). Finds
+  `Healthy*/` and `Unhealthy*/` / `Infected*/` folders at any depth; accepts
+  jpg/jpeg/png/webp/heic. A sub-folder per plant under the class folder is used as the
+  plant identity; loose files fall back to the v1 frame-number grouping.
+- Cleaning = `src/clean.py` rules (same blur/clipped/dark constants). Exact duplicates
+  (by source-file SHA-256) are skipped; a photo filed under both classes is dropped and
+  reported.
+- **Frozen split.** Reads the previous split file and keeps every old photo's plant and
+  set. Only new plants are dealt out, to reach 70/15/15 overall. New photos that are
+  near-duplicates of an old photo are put in that old photo's set. Aborts if any old
+  photo is missing from the data, if a plant is in two sets, or if an old photo moved.
+- Healthy tiling is "auto": on while there are fewer than 150 healthy training photos.
+- Training recipe is contender B unchanged (same transforms, optimiser, warm-up, sampler,
+  loss). Optional `START_FROM = "previous"` warm-starts from the old checkpoint; it is
+  refused without the previous split, because old training photos could otherwise land
+  in the new test set.
+- **One deliberate change to model selection:** best epoch = highest val PR-AUC, ties
+  broken by lower balanced validation loss. In v1 PR-AUC hit 1.0 and the strict `>`
+  comparison kept the first epoch that reached it.
+- **Thresholds from healthy validation scores**: `T_low` = 95th percentile of healthy val
+  scores (clipped to 0.20–0.80), `T_high` = max(0.90, 99th percentile + 0.05), band forced
+  ≥ 0.10 wide. With fewer than 20 healthy val photos it keeps the hand-set 0.50 / 0.90.
+  Nothing is derived from infected scores.
+- Reports val/test per photo and per plant with 95% ranges, test ROC-AUC, and a
+  side-by-side with the previous model on the same test photos (all, and old-only).
+- Writes to `Drive/cwsb/<VERSION>/`: `contender_B.pt`, `config.json` (same keys as v1 plus
+  extras), `split_<VERSION>.csv`, `images.csv`, `duplicates.csv`, `scores_val_test.csv`,
+  `training_log.csv`, `score_histograms.png`. Refuses to overwrite an existing version.
+
+**`splits/split_v1.csv`** — new, in Git. It is `work/splits/split.csv` plus a
+`src_sha256` column (hash of each original file in `Data_final/`). This is the file the
+notebook needs to freeze the v1 split, and `work/` is not in Git.
+
+### What I measured (local CPU, mechanics only — not model quality)
+
+- Data steps on the real `Data_final/` with `split_v1.csv`: all 498 photos matched, the
+  output split is **identical** to v1 (18/2/8 healthy, 364/53/51 unhealthy, 2 excluded as
+  blurry), 126 tiles — the same numbers as PROJECT_STATE section 2.
+- Full run, fresh start, on a 26-photo sample (3 epochs): completed, all outputs written.
+- Full run, 26 old + 9 new photos in a zip, previous split + warm start from the real
+  `models/v1/contender_B.pt`: old photos kept their sets, the planted duplicate was
+  skipped, the comparison table and histogram were produced.
+
+### What was NOT done / limits
+
+- **Not run on Colab or on a GPU.** The Drive mount and the GPU path are untested; the
+  code is the same but the first real run is the real test.
+- No real retrain was done — there is no new data yet, so there is no v2 and no new numbers.
+- The notebook scores on the 768 px copies, so its figures compare with the v1 "768 px"
+  numbers (93.6% recall), not the full-resolution ones (95.9%).
+- `src/predict_folder.py` and `src/analyze_failures.py` still read `models/v1/` only. To
+  use a v2 locally they need a version option. Not changed.
+- Installed `opencv-python-headless` and `matplotlib` on this machine for the test.
+
+### Facts noticed on the way
+
+- Healthy plants per set in v1: 6 train, 2 val, **1 test**. All 8 healthy test photos are
+  one plant, so "healthy cleared" on the test set is a statement about a single plant.
+
+### For Leela
+
+1. New notebook `colab/CWSB_retrain_colab.ipynb` and `splits/split_v1.csv` — please check
+   that `split_v1.csv` matches your `work/splits/split.csv` (it should be the same rows
+   plus the hash column). If your `Data_final/` files differ byte-for-byte from mine, the
+   notebook falls back to matching by file name, so it still works.
+2. After any retrain, commit the new `split_<VERSION>.csv` into `splits/` — the next
+   retrain needs it.
+3. The model-selection tie-break and the threshold rule are my choices; say if you
+   disagree with either before the first real v2 run.

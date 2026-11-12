@@ -53,6 +53,8 @@ alarms on out-of-framing photos.
 
 Only after Priorities 1 and 2 have produced data.
 
+- [x] 2026-11-12 — Retraining notebook ready: `colab/CWSB_retrain_colab.ipynb` (frozen split,
+      versioned output, healthy-derived thresholds, old-vs-new comparison). Untested on Colab.
 - [ ] Re-run Phases 1–2 on the enlarged dataset (Colab GPU).
 - [ ] **Re-derive thresholds on real healthy data.** The current `T_low = 0.50` was set by
       hand because two validation photos could not support a principled choice.

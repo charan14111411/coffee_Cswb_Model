@@ -94,6 +94,11 @@ Supporting scripts:
 Colab notebooks (`colab/`):
 
 - `CWSB_full_pipeline_colab.ipynb` — 13 cells, embeds every script via `%%writefile`, takes raw `Data_final.zip`. **Use this one.**
+- `CWSB_retrain_colab.ipynb` — **for retraining when new data arrives.** Self-contained.
+  Takes old + new data zips, keeps the previous split frozen (`splits/split_v1.csv`), trains
+  contender B, derives thresholds from healthy validation scores, compares with the previous
+  model, saves as a new version (`v2`, ...). Tested locally on CPU for mechanics only; not yet
+  run on Colab. Details in `charan_working.md` 2026-11-12.
 - `CWSB_train_colab.ipynb` — 5 cells, needs `cwsb_package.zip` produced locally first.
 
 **All training runs on Google Colab GPU (T4).** The local Windows machine is CPU-only and is
@@ -251,7 +256,8 @@ coffee_Cswb_Model/
 ├── charan_working.md       <- Charan's log        (in Git)
 ├── README.md                                      (in Git)
 ├── src/            12 scripts, 0.1 MB             (in Git)
-├── colab/          2 notebooks                    (in Git)
+├── colab/          3 notebooks                    (in Git)
+├── splits/         split_v1.csv = the v1 split + file hashes (in Git)
 ├── reports/        CSVs in Git. PDFs are in .gitignore, but the 3 existing PDFs
 │                   (94 MB) were committed earlier and are still tracked
 ├── Data_final/     498 photos, 2.9 GB             (NOT in Git)
