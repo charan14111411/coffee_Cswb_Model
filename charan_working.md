@@ -236,3 +236,27 @@ notebook needs to freeze the v1 split, and `work/` is not in Git.
    retrain needs it.
 3. The model-selection tie-break and the threshold rule are my choices; say if you
    disagree with either before the first real v2 run.
+
+---
+
+## 2026-11-12 (fourth session) — v1 data laid out by class and set
+
+Charan asked for the v1 data as `healthy/{train,test,valid}` and
+`unhealthy/{train,test,valid}`.
+
+- Created **`Data_v1_split/`** at the repo root (2.5 GB, in `.gitignore`). Photos are
+  **copies** of `work/clean/` (rotation fixed, no GPS, full resolution — what v1 trained
+  on), placed according to `splits/split_v1.csv`. `Data_final/` and `work/` are untouched,
+  so the existing pipeline and the retraining notebook still work.
+- Counts: healthy 18 train / 2 valid / 8 test; unhealthy 364 train / 53 valid / 51 test
+  = 496. The 2 photos v1 excluded as blurry are left out. The 126 healthy crops (tiles)
+  are not included — they are derived, not source photos.
+- `Data_v1_split/manifest.csv` lists file, class, set and plant. Checked: 78 plants, none
+  in more than one set.
+- Nothing measured on the model; nothing tried and abandoned.
+
+### For Leela
+
+`Data_v1_split/` is a convenience copy only and is not in Git. To make the same folder on
+your machine, copy each file in `splits/split_v1.csv` from `work/clean/` into
+`<class>/<set>/` (val → `valid`).

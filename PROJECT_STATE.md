@@ -261,6 +261,9 @@ coffee_Cswb_Model/
 ├── reports/        CSVs in Git. PDFs are in .gitignore, but the 3 existing PDFs
 │                   (94 MB) were committed earlier and are still tracked
 ├── Data_final/     498 photos, 2.9 GB             (NOT in Git)
+├── Data_v1_split/  the v1 data laid out as healthy|unhealthy / train|valid|test,
+│                   496 photos + manifest.csv, 2.5 GB   (NOT in Git — regenerable
+│                   from work/clean + splits/split_v1.csv)
 ├── work/           clean/, splits/, tiles/ 2.6 GB (NOT in Git — regenerable)
 ├── models/v1/      contender_A.pt, contender_B.pt (106 MB), config.json,
 │                   training_result.json, ood_reference.npz   (NOT in Git)
