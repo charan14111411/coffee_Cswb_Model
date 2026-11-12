@@ -9,9 +9,23 @@ test/
 *.zip
 *.pt
 
+test2/
+test_new/
+
+# Generated report PDFs are large and regenerable; the CSVs are small, keep them
+reports/*.pdf
+
 # Python
 venv/
 .venv/
 __pycache__/
-test2/
-test_new/
+
+# ---------------------------------------------------------------------------
+# NEVER ignore the handover files. They are how Leela's and Charan's agents
+# stay in sync across machines. Keep these un-ignored permanently.
+#   PROJECT_STATE.md   NEXT_STEPS.md   leela_working.md   charan_working.md
+# ---------------------------------------------------------------------------
+!PROJECT_STATE.md
+!NEXT_STEPS.md
+!leela_working.md
+!charan_working.md
