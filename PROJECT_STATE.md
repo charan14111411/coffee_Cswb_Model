@@ -88,6 +88,7 @@ Supporting scripts:
 | `src/analyze_failures.py` | Scores val + test2, lists every failure with its category. This is what exposed the threshold bug. |
 | `src/ood_guard.py` | Out-of-distribution guard by cosine similarity in 768-d feature space. **Built, measured, found insufficient** — see section 7. |
 | `src/crop_experiment.py` | Measures how much the frame periphery drives the decision. Result in section 8. |
+| `src/export_onnx.py` | Converts `contender_B.pt` to `cwsb_v1.onnx` (runs in Colab or locally). Input `image` (N,3,384,384) preprocessed like `eval_tf`; output `score` (N,) = P(infected), softmax already applied. Asserts ONNX = PyTorch within 1e-4. |
 | `src/package_for_colab.py` | Resizes to short side 768 and zips for upload (199 MB, 624 images). |
 | `src/shrink_for_training.py` | In-place resize to 768 for the all-on-Colab route. |
 
@@ -258,7 +259,7 @@ coffee_Cswb_Model/
 ├── leela_working.md        <- Leela's log         (in Git)
 ├── charan_working.md       <- Charan's log        (in Git)
 ├── README.md                                      (in Git)
-├── src/            12 scripts, 0.1 MB             (in Git)
+├── src/            13 scripts, 0.1 MB             (in Git)
 ├── colab/          3 notebooks                    (in Git)
 ├── splits/         split_v1.csv = the v1 split + file hashes (in Git)
 ├── reports/        CSVs in Git. PDFs are in .gitignore, but the 3 existing PDFs
@@ -269,7 +270,8 @@ coffee_Cswb_Model/
 │                   from work/clean + splits/split_v1.csv)
 ├── work/           clean/, splits/, tiles/ 2.6 GB (NOT in Git — regenerable)
 ├── models/v1/      contender_A.pt, contender_B.pt (106 MB), config.json,
-│                   training_result.json, ood_reference.npz   (NOT in Git)
+│                   training_result.json, ood_reference.npz,
+│                   cwsb_v1.onnx (111 MB, exported 2026-11-13)  (NOT in Git)
 ├── test/           12 blind samples + answer_key.csv, 67 MB  (NOT in Git)
 ├── test2/          144 images + answer_key2.csv, 54 MB       (NOT in Git)
 ├── test_new/       30 user photos, 152 MB                    (NOT in Git)

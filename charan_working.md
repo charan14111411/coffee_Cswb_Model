@@ -332,3 +332,44 @@ history; read any "stem detector" or "YOLO route" suggestion in them as withdraw
 
 Classification only from here on — please don't plan detection work on the strength of
 my earlier notes.
+
+---
+
+## 2026-11-13 — ONNX export (Phase 5), for running on a Raspberry Pi
+
+Charan wants to run the model on a Raspberry Pi and asked for a script to convert the
+`.pt` to ONNX in Colab.
+
+### What I did
+
+- Wrote **`src/export_onnx.py`**. Paste it into one Colab cell (or run locally). It loads
+  `contender_B.pt`, wraps the network so the ONNX output is the **score itself**
+  (P(infected), softmax included), exports at opset 17 with a dynamic batch size, checks
+  the file, compares ONNX against PyTorch and refuses to finish if they differ by more
+  than 1e-4. If the `.pt` is not found in Colab it asks for an upload, and it downloads
+  the `.onnx` at the end.
+- ONNX interface: input `image` float32 (N,3,384,384), preprocessed exactly like
+  `eval_tf` (resize short side 416, centre-crop 384, /255, ImageNet mean/std);
+  output `score` float32 (N,). Thresholds stay in `config.json`.
+- Ran it here: produced **`models/v1/cwsb_v1.onnx`** (111 MB, not in Git).
+
+### What I measured
+
+- Random inputs: largest PyTorch-vs-ONNX difference 1.9e-07.
+- Six real test photos (3 healthy, 3 unhealthy, preprocessed with plain PIL + numpy, i.e.
+  the way a Pi script would do it): largest difference 4.5e-07; scores identical to four
+  decimals.
+
+### What did not work / not done
+
+- Nothing failed. The export uses the older exporter (`dynamo=False`); PyTorch prints a
+  deprecation warning for it, which is harmless.
+- **Not run in Colab** — tested on this laptop only (torch 2.12 CPU).
+- **Not run on a Raspberry Pi.** No speed or memory figure exists yet. No Pi prediction
+  script yet, and no quantised (smaller) model.
+- Installed `onnx` and `onnxruntime` on this machine for the test.
+
+### For Leela
+
+Phase 5 is done on my side (ticked in NEXT_STEPS.md). To get the same file, run
+`python src/export_onnx.py` from a folder containing `contender_B.pt`, or in Colab.

@@ -68,7 +68,8 @@ Only after Priorities 1 and 2 have produced data.
 
 ## Priority 4 — Phases 5 to 7 (productionisation)
 
-- [ ] **Phase 5 — ONNX export.** Export the winning checkpoint to `cwsb_v1.onnx` with a
+- [x] 2026-11-13 **Phase 5 — ONNX export.** Done: `src/export_onnx.py` → `models/v1/cwsb_v1.onnx`
+      (111 MB, parity 4e-07 on real photos). Original item: Export the winning checkpoint to `cwsb_v1.onnx` with a
       4-decimal parity check against the PyTorch output. This is the file mobile integration
       consumes.
 - [ ] **Phase 6 — FastAPI `/v1/predict`.** Quality gate → framing gate → model → thresholds.
