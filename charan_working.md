@@ -373,3 +373,10 @@ Charan wants to run the model on a Raspberry Pi and asked for a script to conver
 
 Phase 5 is done on my side (ticked in NEXT_STEPS.md). To get the same file, run
 `python src/export_onnx.py` from a folder containing `contender_B.pt`, or in Colab.
+
+### 2026-11-13, later — export confirmed in Colab
+
+Charan ran `src/export_onnx.py` in Colab with `contender_B.pt` uploaded. It finished with
+`OK -> cwsb_v1.onnx (111 MB)`, largest PyTorch-vs-ONNX difference 1.15e-06 (limit 1e-4),
+and the same four random-input scores as the laptop run (0.2425, 0.2444, 0.2457, 0.2413).
+So the "not run in Colab" caveat above is closed. Still not run on a Raspberry Pi.
