@@ -8,6 +8,11 @@ models/
 test/
 *.zip
 *.pt
+data/
+old_data/
+new_data/
+images_16_11/
+images_health_16_11/
 
 test2/
 test_new/
