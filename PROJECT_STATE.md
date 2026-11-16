@@ -170,6 +170,9 @@ Held-out test split, photo level (`models/v1/config.json`):
 | Cleared | 7 |
 | Inconclusive | 4 |
 
+Same test split, plant level (`models/v1/config.json`, plant score = max over photos):
+5 caught, 0 missed, 1 false alarm, 0 cleared, 2 inconclusive (8 plants).
+
 Headline: **accuracy 91.5%, recall 91.7%** (as reported on the test2 run at 768 px).
 On full-resolution originals the same test gives **95.9% recall**.
 
@@ -247,9 +250,10 @@ coffee_Cswb_Model/
 ├── leela_working.md        <- Leela's log         (in Git)
 ├── charan_working.md       <- Charan's log        (in Git)
 ├── README.md                                      (in Git)
-├── src/            14 scripts, 0.1 MB             (in Git)
+├── src/            12 scripts, 0.1 MB             (in Git)
 ├── colab/          2 notebooks                    (in Git)
-├── reports/        CSVs in Git, PDFs ignored (94 MB of PDFs)
+├── reports/        CSVs in Git. PDFs are in .gitignore, but the 3 existing PDFs
+│                   (94 MB) were committed earlier and are still tracked
 ├── Data_final/     498 photos, 2.9 GB             (NOT in Git)
 ├── work/           clean/, splits/, tiles/ 2.6 GB (NOT in Git — regenerable)
 ├── models/v1/      contender_A.pt, contender_B.pt (106 MB), config.json,
