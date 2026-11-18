@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Varsapradaya CWSB Synopsis</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+@page { size: A4; margin: 0; }
+:root{
+  --green:#004225; --green-2:#0d5c36; --lime:#92BB37; --lime-ink:#5f8a14; --olive:#AFC55B; --lime-lt:#C0DD97;
+  --navy:#003153; --ink:#273043; --muted:#5a6372; --line:#d6e2d3;
+  --mint:#F3FAF3; --mint-2:#EDF7ED; --cream:#F8F4E3; --gray:#ecede3;
+  --maroon:#570000; --gold:#F2C200; --orange:#b6400e;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:#fff; }
+body{
+  font-family:'Lexend Deca','Segoe UI',Arial,sans-serif; color:var(--ink);
+  font-size:9.4pt; line-height:1.5; font-weight:300;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{ width:210mm; height:297mm; padding:25mm 17mm 18mm; position:relative; overflow:hidden; break-after:page; page-break-after:always; background:#fff; }
+.page:last-child{ break-after:auto; page-break-after:auto; }
+.hdr{ position:absolute; top:9mm; left:17mm; right:17mm; display:flex; align-items:center; justify-content:space-between;
+  font-size:7.4pt; color:var(--muted); border-bottom:0.6pt solid var(--line); padding-bottom:2.6mm; }
+.hdr .brand{ display:flex; align-items:center; gap:2.4mm; color:var(--navy); font-weight:500; }
+.hdr img{ height:6.2mm; }
+.ftr{ position:absolute; bottom:8mm; left:17mm; right:17mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--muted); }
+.ftr .pg{ font-weight:500; color:var(--green); }
+
+h1{ font-weight:600; color:var(--green); font-size:30pt; line-height:1.12; margin:0 0 5mm; letter-spacing:-0.4pt; }
+h2{ font-weight:600; color:var(--green); font-size:18pt; line-height:1.2; margin:0 0 2mm; letter-spacing:-0.2pt; }
+h3{ font-size:10.2pt; font-weight:600; color:var(--navy); margin:0 0 1mm; line-height:1.3; }
+h4{ font-size:8pt; font-weight:500; text-transform:uppercase; letter-spacing:1.1pt; color:var(--lime-ink); margin:0 0 2mm; }
+p{ margin:0 0 2.4mm; }
+b,strong{ font-weight:600; }
+.eyebrow{ font-size:7.6pt; font-weight:500; letter-spacing:1.4pt; text-transform:uppercase; color:var(--lime-ink); margin-bottom:1.6mm; }
+.lead{ font-family:'Lora',Georgia,serif; font-size:11.4pt; line-height:1.5; color:var(--navy); margin:0 0 5mm; }
+.serif{ font-family:'Lora',Georgia,serif; }
+.muted{ color:var(--muted); }
+.small{ font-size:8.2pt; }
+.sec{ margin-bottom:6mm; }
+.rule{ height:1mm; width:14mm; background:var(--lime); border-radius:1mm; margin:0 0 3mm; }
+
+/* ---------- cover ---------- */
+.cover{ padding:14mm 17mm 14mm; background:var(--mint); }
+.cover-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12mm; }
+.cover-top img{ height:13mm; }
+.cover-tag{ font-size:8pt; color:var(--green); font-weight:500; border:0.7pt solid var(--green); border-radius:20mm; padding:1.4mm 4mm; }
+.hero{ display:grid; grid-template-columns:76mm 1fr; gap:10mm; align-items:center; margin-bottom:11mm; }
+.hero-img{ height:146mm; border-radius:5mm; overflow:hidden; position:relative; }
+.hero-img img{ width:100%; height:100%; object-fit:cover; object-position:50% 62%; display:block; }
+.hero-img .cap{ position:absolute; left:0; right:0; bottom:0; padding:6mm 4mm 3mm; font-size:7pt; color:#fff;
+  background:linear-gradient(to top, rgba(0,30,15,.78), rgba(0,30,15,0)); }
+.cover-sub{ font-family:'Lora',Georgia,serif; font-size:13pt; line-height:1.5; color:var(--navy); margin:0 0 7mm; }
+.pill-row{ display:flex; flex-wrap:wrap; gap:2mm; }
+.pill{ font-size:7.8pt; font-weight:500; padding:1.3mm 3.2mm; border-radius:20mm; background:#fff; color:var(--green); border:0.6pt solid var(--lime-lt); }
+.glance-title{ font-size:7.6pt; font-weight:500; letter-spacing:1.4pt; text-transform:uppercase; color:var(--lime-ink); margin:0 0 2.5mm; }
+.tiles{ display:grid; grid-template-columns:repeat(4,1fr); gap:3.5mm; }
+.tile{ background:#fff; border-radius:3mm; padding:4mm 4mm 3.6mm; border-top:1.1mm solid var(--lime); }
+.tile .lbl{ font-size:7.4pt; color:var(--muted); line-height:1.35; }
+.tile .val{ font-size:21pt; font-weight:600; color:var(--green); line-height:1.1; margin:0 0 1.2mm; letter-spacing:-0.3pt; }
+.tile .val small{ font-size:11pt; font-weight:500; }
+.meta{ position:absolute; left:17mm; right:17mm; bottom:13mm; display:grid; grid-template-columns:repeat(4,1fr); gap:4mm;
+  border-top:0.6pt solid var(--lime-lt); padding-top:4mm; font-size:7.6pt; }
+.meta .k{ color:var(--muted); font-size:6.8pt; text-transform:uppercase; letter-spacing:1pt; margin-bottom:.6mm; }
+.meta .v{ color:var(--navy); font-weight:500; }
+
+/* ---------- exec summary ---------- */
+.sumrow{ display:grid; grid-template-columns:38mm 1fr; gap:6mm; padding:3.4mm 0; border-top:0.6pt solid var(--line); }
+.sumrow:last-of-type{ border-bottom:0.6pt solid var(--line); }
+.sumrow .k{ font-weight:600; color:var(--green); font-size:9.6pt; display:flex; gap:2.4mm; align-items:flex-start; }
+.sumrow .k .n{ flex:none; width:5.4mm; height:5.4mm; border-radius:50%; background:var(--mint-2); color:var(--green); font-size:7.4pt;
+  display:flex; align-items:center; justify-content:center; font-weight:600; margin-top:.2mm; }
+.sumrow p{ margin:0; }
+.bottomline{ margin-top:6mm; background:var(--green); color:#fff; border-radius:4mm; padding:6mm 7mm; display:grid; grid-template-columns:30mm 1fr; gap:5mm; align-items:center; }
+.bottomline .t{ font-size:8pt; letter-spacing:1.3pt; text-transform:uppercase; color:var(--lime-lt); font-weight:500; }
+.bottomline p{ font-family:'Lora',Georgia,serif; font-size:11.6pt; line-height:1.5; margin:0; color:#fff; }
+
+/* ---------- problem / how it works ---------- */
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+.hard{ display:grid; grid-template-columns:repeat(3,1fr); gap:3.5mm; margin-top:4mm; }
+.hard div{ background:var(--cream); border-radius:3mm; padding:3.5mm 4mm; }
+.hard b{ display:block; color:var(--maroon); font-size:9.4pt; margin-bottom:.8mm; }
+.signs{ display:flex; flex-wrap:wrap; gap:1.6mm; margin:2mm 0 0; }
+.signs span{ font-size:7.6pt; background:var(--mint-2); color:var(--green); border-radius:20mm; padding:.9mm 2.8mm; font-weight:400; }
+.flow{ display:flex; align-items:stretch; gap:0; margin:4mm 0 5mm; }
+.step{ flex:1; background:var(--mint); border:0.6pt solid var(--lime-lt); border-radius:3mm; padding:3.6mm 3mm 3.2mm; text-align:center; }
+.step .num{ width:7mm; height:7mm; border-radius:50%; background:var(--green); color:#fff; font-weight:600; font-size:8.6pt;
+  display:flex; align-items:center; justify-content:center; margin:0 auto 2mm; }
+.step b{ display:block; color:var(--navy); font-size:9pt; margin-bottom:.8mm; }
+.step span{ font-size:7.6pt; color:var(--muted); line-height:1.35; display:block; }
+.arrow{ flex:none; width:6mm; display:flex; align-items:center; justify-content:center; }
+.arrow svg{ width:4mm; height:4mm; }
+table{ border-collapse:collapse; width:100%; }
+.vt td{ padding:3mm 3mm; border-bottom:0.6pt solid var(--line); vertical-align:middle; font-size:8.8pt; }
+.vt th{ text-align:left; font-size:7.2pt; text-transform:uppercase; letter-spacing:1pt; color:var(--muted); font-weight:500; padding:0 3mm 2mm; border-bottom:0.8pt solid var(--green); }
+.chip{ display:inline-block; font-size:8pt; font-weight:600; border-radius:20mm; padding:1.1mm 3.4mm; white-space:nowrap; }
+.chip.ok{ background:var(--green); color:#fff; }
+.chip.re{ background:var(--gold); color:#2b2400; }
+.chip.ws{ background:var(--orange); color:#fff; }
+.note{ font-size:8.2pt; color:var(--muted); margin-top:3mm; }
+
+/* ---------- what we built ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:3.6mm; }
+.card{ border:0.6pt solid var(--line); border-radius:3mm; padding:3.6mm 4.2mm 3.2mm; background:#fff; position:relative; }
+.card .tag{ position:absolute; top:3.6mm; right:4mm; font-size:7pt; font-weight:600; color:var(--lime-ink); }
+.card h3{ padding-right:8mm; }
+.card p{ font-size:8.4pt; margin:0; line-height:1.45; }
+.dt{ margin-top:5mm; }
+.dt th{ white-space:nowrap; text-align:left; font-size:7.2pt; text-transform:uppercase; letter-spacing:1pt; color:var(--muted); font-weight:500; padding:0 3mm 2mm; border-bottom:0.8pt solid var(--green); }
+.dt td{ padding:2.4mm 3mm; border-bottom:0.6pt solid var(--line); font-size:8.8pt; }
+.dt td.n{ text-align:right; font-variant-numeric:tabular-nums; font-weight:500; color:var(--navy); }
+.dt th.n{ text-align:right; }
+.dt tr.tot td{ font-weight:600; border-bottom:none; }
+
+/* ---------- results ---------- */
+.tiles.r .tile{ background:var(--mint); }
+.tiles.r .tile .val{ font-size:20pt; }
+.seg-wrap{ margin:6mm 0 2mm; }
+.seg-row{ display:grid; grid-template-columns:36mm 1fr; gap:4mm; align-items:center; margin-bottom:3.4mm; }
+.seg-row .lab{ font-size:8.6pt; color:var(--navy); font-weight:500; line-height:1.3; }
+.seg-row .lab span{ display:block; font-size:7.4pt; color:var(--muted); font-weight:300; }
+.seg{ display:flex; gap:2px; height:28px; }
+.seg div{ border-radius:4px; display:flex; align-items:center; padding-left:2.2mm; font-size:8pt; font-weight:600; white-space:nowrap; overflow:hidden; }
+.s-ok{ background:var(--green); color:#fff; }
+.s-re{ background:var(--gold); color:#2b2400; }
+.s-no{ background:var(--maroon); color:#fff; }
+.legend{ display:flex; gap:6mm; margin-left:40mm; font-size:7.6pt; color:var(--muted); }
+.legend i{ display:inline-block; width:3mm; height:3mm; border-radius:1px; margin-right:1.6mm; vertical-align:-0.4mm; }
+.callout{ border-left:1.2mm solid var(--gold); background:var(--cream); border-radius:0 3mm 3mm 0; padding:4mm 5mm; margin-top:5mm; }
+.callout b{ color:var(--maroon); }
+.facts{ display:grid; grid-template-columns:1fr 1fr; gap:3.4mm 6mm; margin-top:5mm; }
+.fact{ display:grid; grid-template-columns:5mm 1fr; gap:2mm; font-size:8.6pt; }
+.fact .dot{ width:2.6mm; height:2.6mm; border-radius:50%; background:var(--lime); margin-top:1.4mm; }
+.pt td{ padding:2.4mm 3mm; border-bottom:0.6pt solid var(--line); font-size:8.6pt; }
+.pt th{ white-space:nowrap; text-align:left; font-size:7pt; text-transform:uppercase; letter-spacing:.6pt; color:var(--muted); font-weight:500; padding:0 3mm 2mm; border-bottom:0.8pt solid var(--green); }
+.pt td.n, .pt th.n{ text-align:center; font-variant-numeric:tabular-nums; }
+
+/* ---------- examples ---------- */
+.ex{ display:grid; grid-template-columns:43mm 43mm 1fr; gap:4mm; align-items:start; padding:3.4mm 0; border-top:0.6pt solid var(--line); }
+.ex:last-of-type{ border-bottom:0.6pt solid var(--line); }
+.ex figure{ margin:0; }
+.ex img{ width:43mm; height:43mm; object-fit:cover; border-radius:2mm; display:block; }
+.ex figcaption{ font-size:7pt; color:var(--muted); margin-top:1.2mm; }
+.ex .txt h3{ margin-bottom:1.6mm; }
+.ex .txt p{ font-size:8.6pt; }
+.verdict{ display:flex; align-items:center; gap:2mm; margin-bottom:2.2mm; flex-wrap:wrap; }
+.mark{ font-size:7.6pt; font-weight:600; padding:.8mm 2.6mm; border-radius:20mm; }
+.mark.right{ background:var(--mint-2); color:var(--green); border:0.6pt solid var(--lime-lt); }
+.mark.wrong{ background:#f7e6e6; color:var(--maroon); border:0.6pt solid #e5c4c4; }
+.takeaway{ background:var(--green); color:#fff; border-radius:4mm; padding:4.6mm 6mm; margin-top:4.5mm; }
+.takeaway h4{ color:var(--lime-lt); }
+.takeaway p{ margin:0; font-family:'Lora',Georgia,serif; font-size:10.4pt; line-height:1.55; }
+
+/* ---------- benefits ---------- */
+.bcards{ display:grid; grid-template-columns:1fr 1fr; gap:3.8mm; }
+.bcard{ background:var(--mint); border-radius:3.5mm; padding:4.4mm 4.6mm 4mm; display:grid; grid-template-columns:9mm 1fr; gap:3mm; }
+.bicon{ width:9mm; height:9mm; border-radius:2.4mm; background:var(--green); display:flex; align-items:center; justify-content:center; }
+.bicon svg{ width:5mm; height:5mm; }
+.bcard p{ font-size:8.4pt; margin:0; line-height:1.45; }
+.who{ margin-top:6mm; }
+.who td{ padding:3mm 3mm; border-bottom:0.6pt solid var(--line); font-size:8.6pt; vertical-align:top; }
+.who td:first-child{ width:40mm; font-weight:600; color:var(--green); }
+.who th{ text-align:left; font-size:7.2pt; text-transform:uppercase; letter-spacing:1pt; color:var(--muted); font-weight:500; padding:0 3mm 2mm; border-bottom:0.8pt solid var(--green); }
+
+/* ---------- limitations ---------- */
+.lt th{ text-align:left; font-size:7.2pt; text-transform:uppercase; letter-spacing:1pt; color:var(--muted); font-weight:500; padding:0 2.6mm 2mm; border-bottom:0.8pt solid var(--green); }
+.lt td{ padding:2.8mm 2.6mm; border-bottom:0.6pt solid var(--line); font-size:8.3pt; vertical-align:top; line-height:1.42; }
+.lt td:first-child{ font-weight:600; color:var(--navy); width:44mm; }
+.lt td:last-child{ color:var(--green-2); }
+.dec{ display:grid; grid-template-columns:1fr 1fr; gap:3.4mm; margin-top:3mm; }
+.dec div{ border:0.6pt solid var(--line); border-radius:3mm; padding:3.2mm 4mm; font-size:8.2pt; line-height:1.42; }
+.dec b{ display:block; color:var(--green); font-size:8.8pt; margin-bottom:.6mm; }
+
+/* ---------- roadmap ---------- */
+.done{ background:var(--mint); border-radius:3.5mm; padding:4.4mm 5mm; display:grid; grid-template-columns:34mm 1fr; gap:4mm; align-items:start; margin-bottom:4mm; }
+.done .t{ font-weight:600; color:var(--green); font-size:9.6pt; line-height:1.3; }
+.done .t span{ display:block; font-weight:300; font-size:7.6pt; color:var(--muted); margin-top:.8mm; }
+.ticks{ display:grid; grid-template-columns:1fr 1fr; gap:1.6mm 5mm; font-size:8.4pt; }
+.ticks div{ display:flex; gap:2mm; align-items:flex-start; }
+.ticks svg{ flex:none; width:3.6mm; height:3.6mm; margin-top:.6mm; }
+.road{ position:relative; margin-left:3mm; padding-left:9mm; border-left:0.8mm solid var(--lime-lt); }
+.rs{ position:relative; margin-bottom:4mm; }
+.rs:last-child{ margin-bottom:0; }
+.rs .b{ position:absolute; left:-13.4mm; top:0; width:8mm; height:8mm; border-radius:50%; background:#fff; border:0.8mm solid var(--green);
+  display:flex; align-items:center; justify-content:center; font-weight:600; color:var(--green); font-size:8.4pt; }
+.rs h3{ margin-bottom:.8mm; }
+.rs h3 em{ font-style:normal; font-size:7.2pt; font-weight:500; color:#fff; background:var(--maroon); border-radius:20mm; padding:.5mm 2.2mm; margin-left:2mm; vertical-align:1px; }
+.rs p{ font-size:8.4pt; margin:0; line-height:1.45; }
+.asks{ display:grid; grid-template-columns:repeat(3,1fr); gap:3.6mm; }
+.ask{ border-radius:3.5mm; padding:4.2mm 4.4mm; background:var(--green); color:#fff; }
+.ask .n{ font-size:18pt; font-weight:600; color:var(--lime-lt); line-height:1; margin-bottom:2mm; }
+.ask b{ display:block; font-size:9.2pt; margin-bottom:1mm; color:#fff; }
+.ask p{ font-size:8pt; margin:0; line-height:1.45; color:#e6f0e8; }
+
+/* ---------- appendix ---------- */
+.kv td{ padding:2.1mm 3mm; border-bottom:0.6pt solid var(--line); font-size:8.1pt; vertical-align:top; line-height:1.42; }
+.kv td:first-child{ width:36mm; font-weight:600; color:var(--navy); }
+.kv code, .mono{ font-family:Consolas,'Courier New',monospace; font-size:7.8pt; color:var(--green); }
+.gl{ display:grid; grid-template-columns:1fr 1fr; gap:2.6mm 7mm; }
+.gl div{ font-size:8.1pt; line-height:1.42; }
+.gl b{ color:var(--green); }
+</style>
+</head>
+<body>
+<style>
+.ex{ grid-template-columns:56mm 56mm 1fr; padding:5mm 0; }
+.ex img{ width:56mm; height:56mm; }
+.cards.six .card{ padding:5mm 5mm 4.6mm; }
+.cards.six .card p{ font-size:8.8pt; line-height:1.5; }
+.cards.six .card h3{ font-size:10.6pt; margin-bottom:1.6mm; }
+.asks.two-up{ grid-template-columns:1fr 1fr; }
+.hdr{ justify-content:flex-start; }
+.hero-img{ height:166mm; }
+.cover-top{ margin-bottom:14mm; }
+</style>
+
+<!-- ======================= 1. COVER ======================= -->
+<section class="page cover">
+  <div class="cover-top">
+    <img src="varsapradaya-logo.svg" alt="Varsapradaya">
+  </div>
+
+  <div class="hero">
+    <div class="hero-img">
+      <img src="hero.jpg" alt="">
+      <div class="cap">A WSB-infested Arabica plant photographed during our 2026 field visits: dry, leafless branches on a declining plant.</div>
+    </div>
+    <div>
+      <div class="eyebrow">Coffee White Stem Borer &middot; AI screening</div>
+      <h1>Spotting White Stem Borer from a single photo</h1>
+      <p class="cover-sub">An AI screening tool for the Varsapradaya coffee platform: what it is, how it works, how it helps, and what comes next.</p>
+      <div class="pill-row">
+        <span class="pill">Arabica coffee</span>
+        <span class="pill">Image AI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="glance-title">At a glance</div>
+  <div class="tiles">
+    <div class="tile"><div class="val">1 photo</div><div class="lbl">of the whole plant is all the user needs to take</div></div>
+    <div class="tile"><div class="val">Seconds</div><div class="lbl">from taking the photo to getting a verdict</div></div>
+    <div class="tile"><div class="val">3-way</div><div class="lbl">answer: no visible signs, retake, or WSB signs likely</div></div>
+    <div class="tile"><div class="val">Heatmap</div><div class="lbl">shows which part of the photo drove each result</div></div>
+  </div>
+</section>
+
+<!-- ======================= 2. EXECUTIVE SUMMARY ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="eyebrow">Executive summary</div>
+  <h2>The solution on one page</h2>
+  <div class="rule"></div>
+  <p class="lead">We have built an AI tool that looks at a photo of a coffee plant and says whether it shows signs of White Stem Borer, so that inspection effort goes where it is needed most.</p>
+
+  <div class="sumrow"><div class="k"><span class="n">1</span>The problem</div>
+    <p>Coffee White Stem Borer (CWSB) is one of the most damaging pests of Arabica coffee in India. The grub feeds hidden inside the stem, so damage shows late. Finding it today means a trained person inspecting stems plant by plant.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">2</span>Our solution</div>
+    <p>A farmer or field officer photographs a coffee plant and, within seconds, gets one of three answers: <b>no visible signs</b>, <b>retake</b>, or <b>WSB signs likely</b>. A heatmap shows what drove the result.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">3</span>What we have built</div>
+    <p>A field validation protocol, the AI model with built-in photo quality checks, evidence heatmaps, a deployment-ready package for phones and field devices, and a retraining process so the model improves with each season&rsquo;s data.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">4</span>How it helps</div>
+    <p>Field teams can screen many plants in minutes and spend inspection time only where a photo says to look. Infestations can be found earlier and more consistently, and every screening adds to the Varsapradaya platform&rsquo;s pest intelligence.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">5</span>Where we are</div>
+    <p>The core AI model is built and working. Next come wider field data collection, an automatic photo-framing check, Version 2 of the model, and the farmer-facing app.</p></div>
+
+  <div class="bottomline">
+    <div class="t">Bottom line</div>
+    <p>A phone photo becomes a fast, consistent first check for White Stem Borer, helping growers act before an infestation spreads.</p>
+  </div>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">2</div></div>
+</section>
+
+<!-- ======================= 3. PROBLEM + HOW IT WORKS ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="sec">
+    <div class="eyebrow">Section 1</div>
+    <h2>The problem we are solving</h2>
+    <div class="rule"></div>
+    <div class="two">
+      <div>
+        <p><b>Coffee White Stem Borer</b> (<i>Xylotrechus quadripes</i>) is a beetle whose grubs tunnel inside the main stem of Arabica coffee plants. Because the feeding is hidden, the visible signs appear late, often when the plant can no longer be saved.</p>
+        <p>Adult beetles that emerge from an infested plant lay eggs on nearby plants. Every infested plant that is missed raises the risk for the plantation around it.</p>
+      </div>
+      <div>
+        <p class="small muted" style="margin-bottom:1mm">Signs our field team records on each plant:</p>
+        <div class="signs">
+          <span>Ridges on the bark</span><span>Exit holes</span><span>Powdery frass</span><span>Beetles</span>
+          <span>Yellowing leaves</span><span>Wilting</span><span>Die-back</span>
+        </div>
+        <p class="small muted" style="margin-top:3mm">Most of these are only clear in mid- to late-stage infestation, which is why early detection is valuable.</p>
+      </div>
+    </div>
+    <div class="hard">
+      <div><b>Slow</b><span class="small">Stems are checked plant by plant, by hand, across large estates.</span></div>
+      <div><b>Needs expertise</b><span class="small">Early signs are subtle and easy to miss without training.</span></div>
+      <div><b>Inconsistent</b><span class="small">Results vary with who inspects, when, and how carefully.</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="eyebrow">Section 2</div>
+    <h2>How the solution works</h2>
+    <div class="rule"></div>
+    <p>A farmer or field officer takes one photo of a plant. Within seconds the system checks the photo, scores it and returns a clear answer.</p>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><b>Photograph</b><span>The whole plant, from 2&ndash;3 metres</span></div>
+      <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="num">2</div><b>Quality check</b><span>Blurry, too dark or glare? Ask for a retake</span></div>
+      <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="num">3</div><b>AI model</b><span>Reads the plant&rsquo;s condition from the photo</span></div>
+      <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="num">4</div><b>Verdict</b><span>One of three plain answers, with a heatmap</span></div>
+      <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="step"><div class="num">5</div><b>Action</b><span>Inspect and treat the plants that were flagged</span></div>
+    </div>
+
+    <table class="vt">
+      <tr><th style="width:44mm">Verdict</th><th style="width:52mm">When</th><th>What the user does</th></tr>
+      <tr><td><span class="chip ok">No visible signs</span></td><td>The plant shows no signs of WSB-related decline</td><td>No action needed now.</td></tr>
+      <tr><td><span class="chip re">Retake / inconclusive</span></td><td>The result is uncertain, or the photo is blurry, dark or badly framed</td><td>Take a new photo following the on-screen guide.</td></tr>
+      <tr><td><span class="chip ws">WSB signs likely</span></td><td>The plant shows strong signs consistent with WSB</td><td>Inspect the stem physically, then treat or remove the plant as advised.</td></tr>
+    </table>
+    <p class="note">When a plant is photographed more than once, the plant&rsquo;s verdict follows its most concerning photo. This cautious rule favours catching infestations over missing them.</p>
+  </div>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">3</div></div>
+</section>
+
+<!-- ======================= 4. WHAT WE BUILT ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="eyebrow">Section 3</div>
+  <h2>What we have built</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:5mm">Six building blocks, from the field visit to a model that is ready to run on a phone.</p>
+
+  <div class="cards six">
+    <div class="card"><span class="tag">01</span><h3>Field validation protocol</h3>
+      <p>A standard field sheet on which our team records each plant&rsquo;s symptoms (ridges, exit holes, frass, beetles, yellowing, wilting, die-back) and each hotspot&rsquo;s conditions (temperature, humidity, light, soil moisture, pH, NDVI). It ties every photo to observations made on the ground.</p></div>
+    <div class="card"><span class="tag">02</span><h3>Privacy and photo quality built in</h3>
+      <p>Location data is removed from every photo. Blurry, dark or glare-filled photos are caught before they are scored, and the user is asked to retake them, so poor photos never lead to a wrong call.</p></div>
+    <div class="card"><span class="tag">03</span><h3>The AI model</h3>
+      <p>A modern image-recognition network, first trained on millions of general images and then specialised on photos of coffee plants. It reads the condition of the whole plant (canopy density, colour, die-back) and gives a result in seconds.</p></div>
+    <div class="card"><span class="tag">04</span><h3>Clear three-way verdict</h3>
+      <p>Instead of a raw score, the user sees one of three plain answers: no visible signs, retake, or WSB signs likely. When the model is unsure, it says so rather than guessing.</p></div>
+    <div class="card"><span class="tag">05</span><h3>Evidence heatmaps</h3>
+      <p>Every result comes with a heatmap that highlights the parts of the photo behind the decision, so agronomists and farmers can see why a plant was flagged.</p></div>
+    <div class="card"><span class="tag">06</span><h3>Ready to deploy, built to improve</h3>
+      <p>The model is packaged in an open standard format (ONNX) that runs on a phone, a server or a small field device. A retraining process turns each season&rsquo;s new photos into an improved version, which replaces the current one only after it proves better.</p></div>
+  </div>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">4</div></div>
+</section>
+
+<!-- ======================= 5. WHAT THE USER SEES ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="eyebrow">Section 4</div>
+  <h2>What the user sees</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:3mm">Each result comes with a heatmap. Warmer colours (yellow to red) mark the parts of the photo that drove the decision most.</p>
+
+  <div class="ex">
+    <figure><img src="ex_infested_photo.jpg" alt=""><figcaption>The photo</figcaption></figure>
+    <figure><img src="ex_infested_heat.jpg" alt=""><figcaption>The heatmap</figcaption></figure>
+    <div class="txt">
+      <div class="verdict"><span class="chip ws">WSB signs likely</span></div>
+      <h3>Plant with WSB infestation</h3>
+      <p>A declining plant with dry, leafless branches. The tool flags it with high confidence, and the heatmap points to the areas behind the decision.</p>
+      <p class="small muted">Next step: inspect the stem and treat or remove the plant.</p>
+    </div>
+  </div>
+  <div class="ex">
+    <figure><img src="ex_healthy_photo.jpg" alt=""><figcaption>The photo</figcaption></figure>
+    <figure><img src="ex_healthy_heat.jpg" alt=""><figcaption>The heatmap</figcaption></figure>
+    <div class="txt">
+      <div class="verdict"><span class="chip ok">No visible signs</span></div>
+      <h3>Healthy plant</h3>
+      <p>A dense, green canopy. Only small patches draw attention, and the tool finds no signs of decline.</p>
+      <p class="small muted">Next step: no action needed now.</p>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <h4>Why the way the photo is taken matters</h4>
+    <p>The model reads the condition of the whole plant: canopy density, colour and die-back. The app will therefore guide users to photograph the whole plant from 2&ndash;3 metres, and ask for a retake when a photo is unsuitable. Recognising stem-level signs such as bore holes from close-up photos is part of the next phase.</p>
+  </div>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">5</div></div>
+</section>
+
+<!-- ======================= 6. HOW IT HELPS ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="eyebrow">Section 5</div>
+  <h2>How this solution helps</h2>
+  <div class="rule"></div>
+  <p class="lead" style="margin-bottom:4mm">The tool does not replace stem inspection. It decides where inspection is needed, so scarce expert time goes to the right plants.</p>
+
+  <div class="bcards">
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4 14 h7 l-1 8 9-12 h-7 z"/></svg></div>
+      <div><h3>Screen more plants, faster</h3><p>A photo takes seconds. Field staff can cover far more plants per day and save stem inspections for the plants the tool flags.</p></div></div>
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"/></svg></div>
+      <div><h3>A consistent first opinion</h3><p>Every plant is judged by the same rules, whoever takes the photo and whichever estate it is on.</p></div></div>
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+      <div><h3>Act sooner, limit the spread</h3><p>Flagged plants can be inspected and treated or removed before emerging beetles reach neighbouring plants.</p></div></div>
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
+      <div><h3>Better photos and records</h3><p>The quality check asks for a retake on blurry, dark or glare-filled photos. Each screening can be logged by plant and date.</p></div></div>
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div><h3>Evidence you can check</h3><p>Heatmaps show why a plant was flagged, so agronomists and farmers can trust, or challenge, each result.</p></div></div>
+    <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+      <div><h3>Grows with the platform</h3><p>It sits alongside Varsapradaya&rsquo;s weather and soil data. A separate risk score (season, altitude, shade, rainfall) can be shown next to each verdict, and each season&rsquo;s photos make the next model better.</p></div></div>
+  </div>
+
+  <table class="who">
+    <tr><th>Who benefits</th><th>What they get</th></tr>
+    <tr><td>Farmers</td><td>An early warning from a phone photo, a clear next step, and fewer plants lost to late detection.</td></tr>
+    <tr><td>Field officers and agronomists</td><td>A prioritised list of plants to inspect, consistent screening across estates, and heatmap evidence to explain each call.</td></tr>
+    <tr><td>The coffee sector</td><td>Earlier, wider and more consistent pest surveillance, and a reusable approach that can be extended to other pests and diseases.</td></tr>
+  </table>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">6</div></div>
+</section>
+
+<!-- ======================= 7. ROADMAP + SUPPORT ======================= -->
+<section class="page">
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
+
+  <div class="eyebrow">Section 6</div>
+  <h2>Roadmap</h2>
+  <div class="rule"></div>
+
+  <div class="done">
+    <div class="t">Stage 1 complete<span>Core AI model</span></div>
+    <div class="ticks">
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Field validation protocol and first field visits</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI model built</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Photo quality check and three-way verdict</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Evidence heatmaps</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Deployment-ready model package</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Retraining process for new versions</div>
+    </div>
+  </div>
+
+  <div class="road">
+    <div class="rs"><div class="b">1</div><h3>Wider field data collection<em>Priority</em></h3>
+      <p>Photos from many more estates, shade levels and seasons: healthy plants, plants stressed by other causes such as drought or nutrient deficiency, early-stage infestations, and stem close-ups paired with whole-plant photos. Every label verified by stem inspection and graded by severity.</p></div>
+    <div class="rs"><div class="b">2</div><h3>Automatic framing check</h3>
+      <p>A small model that recognises when a photo is not a whole-plant shot and asks the user to retake it, before any verdict is given.</p></div>
+    <div class="rs"><div class="b">3</div><h3>Version 2 of the model</h3>
+      <p>Retrain on the wider data so the tool can recognise earlier-stage infestation and tell WSB apart from other causes of decline. Version 2 replaces Version 1 only if it performs better.</p></div>
+    <div class="rs"><div class="b">4</div><h3>Field product</h3>
+      <p>A prediction service, then a farmer app with a camera guide, the three-way verdict and retake prompts, and an agronomic risk score shown alongside each result.</p></div>
+  </div>
+
+  <div style="margin-top:8mm">
+    <div class="eyebrow">Section 7</div>
+    <h2>Where support would help</h2>
+    <div class="rule"></div>
+    <div class="asks two-up">
+      <div class="ask"><div class="n">01</div><b>Access to estates</b><p>Field access across several estates, shade levels and seasons for the wider data collection, especially healthy plants and plants stressed by other causes.</p></div>
+      <div class="ask"><div class="n">02</div><b>Expert verification</b><p>Entomologists, for example from CCRI or the Coffee Board, to confirm plant labels by stem inspection.</p></div>
+    </div>
+  </div>
+
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">7</div></div>
+</section>
+
+</body>
+</html>

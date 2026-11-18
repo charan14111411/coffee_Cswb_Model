@@ -250,6 +250,8 @@ coffee_Cswb_Model/
 ├── leela_working.md        <- Leela's log         (in Git)
 ├── charan_working.md       <- Charan's log        (in Git)
 ├── README.md                                      (in Git)
+├── Varsapradaya_CWSB_Synopsis.pdf  <- 7-page synopsis for officials, no data/test figures (in Git);
+│                   source + regenerate command in docs/synopsis/
 ├── src/            12 scripts, 0.1 MB             (in Git)
 ├── colab/          2 notebooks                    (in Git)
 ├── reports/        CSVs in Git. PDFs are in .gitignore, but the 3 existing PDFs
