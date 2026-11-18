@@ -81,3 +81,72 @@ failure is a data/framing problem, not something to tune away.
    `src/`, in Git and on disk. I corrected the count. If two scripts exist on your machine
    and were never committed, please push them.
 3. The pendrive is not needed for my side — everything on the transfer list is already here.
+
+## 2026-11-18 — Scored three new photo batches; built the labels-vs-model proof report
+
+### What I ran
+
+- `images_16_11/` (30 WhatsApp photos, infested stem close-ups) → 26 flagged
+  at 0.91–1.00, 2 blurry-gated, 2 inconclusive.
+- `images_health_16_11/` (16 indoor cut-stem photos, believed healthy) → **0 cleared**:
+  8 flagged at 0.95–0.99, 7 in the 0.80–0.90 hedge band, 1 blurry-gated.
+- `images_health_16_11_v2/` (211 images) → 198 flagged, 9 inconclusive, 4 cleared.
+
+Reports in `reports/predictions_<folder>.pdf` + `.csv`. The three new image
+folders are gitignored; transfer by pendrive as usual.
+
+### What the first two batches showed
+
+v1 gives nearly the same answer for healthy and infested **stem close-ups**
+(0.80–0.99 vs 0.91–1.00). Both batches are out of distribution — indoor cut
+stems on a white table — and the model fires on "rough bark close-up". This is
+the same close-up failure already documented, now with a healthy counter-example
+to go with it. Confirms Priority 2 (framing gate) is the right next step.
+
+### images_health_16_11_v2 is NOT healthy data
+
+The folder name is misleading. A `labels/` folder arrived with it: 211 YOLO
+`.txt` files, one per image, 645 boxes (class 0: 337, class 1: 300, class 2: 8),
+**no empty files**. Every image is confirmed infested with the damage boxed by
+the annotation team. The images are 640×640 dataset exports with `sourceN_<hash>`
+names, and scores cluster tightly by `sourceN` — each group is several crops of
+the same original photo, so this is ~47 distinct photos, not 211 samples.
+
+### New script: `src/make_labels_proof_pdf.py`
+
+Built to answer the manager's question ("to what extent it reaches") by checking
+predictions against the confirmed boxes. Maps YOLO boxes through the same
+Resize(416)/CenterCrop(384) geometry as `eval_tf`, so boxes land exactly where
+the model sees them (verified visually before finalising). Outputs
+`reports/proof_labels_vs_model.pdf` (212 pages, summary first, misses first) and
+`.csv`. Rerunnable on any future labelled batch.
+
+Results:
+
+- **Image level: 198/211 flagged (93.8%)**, 9 inconclusive, 4 missed. All 4
+  misses are `source10` (moss-covered stem, scores 0.11–0.35). By source photo:
+  44 of 47 fully flagged.
+- **Location level: heatmap peak inside a confirmed box in 20/207 (9.7%)**, mean
+  7% of attention inside boxes. Boxes cover 5.1% of the image on average, so
+  this is only ~2× chance.
+
+### What this means
+
+v1 decides correctly at image level but does not localise. That is expected —
+it is a classifier trained on whole-image labels with a coarse 12×12 Grad-CAM,
+so it judges the whole stem. Pointing at the damage needs a detector trained on
+these boxes. Note this is also why the 4 `source10` misses matter: moss changes
+the whole-stem texture, and there is nothing forcing the model to look at the
+boxed damage.
+
+### For Leela
+
+1. **`labels/` is now in Git** (28 KB, 211 files). The matching images are not —
+   they are gitignored like every other photo folder. The labels are confirmed
+   ground truth and cost nothing to track; the images come by pendrive.
+2. **We now have real detector-grade data**: `data/` (485 labelled, infested
+   only) plus these 211. Still zero labelled healthy stems, which is the gap
+   that blocks both the detector and the framing gate.
+3. If you want the localisation number to improve, it is a new model, not a
+   tuning job — `make_labels_proof_pdf.py` is ready to measure any candidate the
+   same way.
