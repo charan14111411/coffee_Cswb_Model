@@ -81,3 +81,46 @@ failure is a data/framing problem, not something to tune away.
    `src/`, in Git and on disk. I corrected the count. If two scripts exist on your machine
    and were never committed, please push them.
 3. The pendrive is not needed for my side — everything on the transfer list is already here.
+
+---
+
+## 2026-11-18 — Management synopsis PDF
+
+### What was done
+
+`git pull` (already up to date at `451b33f`), read the four handover files, then built a
+10-page synopsis for management: **`Varsapradaya_CWSB_Synopsis.pdf`** (repo root, 3.9 MB).
+Source is in `docs/synopsis/` (HTML + bundled fonts + images; regenerate with headless Chrome,
+command in `docs/synopsis/README.md`).
+
+Contents: cover, one-page executive summary, the problem, how it works (photo → quality gate →
+model → 3-way verdict), the 8 components built, test results, Grad-CAM examples (1 caught,
+1 cleared, 1 close-up false alarm), benefits, limitations with planned fixes, locked design
+decisions, roadmap, asks of management, technical appendix and glossary.
+Branding (colours `#004225` / `#003153`, Lexend Deca + Lora, logo) taken from the
+`varsapradaya-web` project.
+
+### Numbers used (all from existing files, nothing re-measured)
+
+- Test split, from `reports/cwsb_test_report_test_real.pdf` page 1 and `models/v1/config.json`:
+  59 photos / 8 plants; recall 93.6% (44 of 47 decided), correct clears 87.5% (7 of 8),
+  accuracy where decided 92.7% (51 of 55), 4 sent to retake. Plant level 5 / 0 / 1 / 0 / 2.
+- **Worth knowing:** that test split contains only **one healthy plant** (`plant_003`), so
+  the 87.5% clear rate is 8 photos of a single plant. The PDF says so explicitly.
+- 95.9% full-resolution recall, 1 of 30 lighting flips, 14 of 18 misses from the old threshold
+  bug, 19 of 19 close-ups flagged, OOD guard 5 of 19: all quoted from `PROJECT_STATE.md`.
+
+### What was not included, and why
+
+Leela's 16 Nov CSVs (`predictions_images_16_11.csv`, `predictions_images_health_16_11.csv`,
+`results_data_test.csv`, `mask_experiment_images_16_11.csv`, `predictions_data.csv`) have no
+write-up or ground truth in `leela_working.md`, so they are left out of the synopsis rather than
+interpreted. No YOLO / detector work is mentioned (project is classification only).
+
+### For Leela
+
+1. Could you add a short entry for the 16 Nov runs: what `images_health_16_11/` contains
+   (healthy plants?) and what the results mean? If those 16 photos are healthy, then 0 of 16 were
+   cleared (9 WSB likely, 6 retake, 1 blurry), which would be worth stating in `PROJECT_STATE.md`.
+2. `models/v1/cwsb_v1.onnx` (13 Nov) exists on this machine but `PROJECT_STATE.md` does not list
+   it or a parity result. If the 4-decimal parity check passed, please record the number.
