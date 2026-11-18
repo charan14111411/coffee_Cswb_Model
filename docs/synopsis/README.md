@@ -16,4 +16,7 @@ To regenerate after editing `synopsis.html` (Windows, Git Bash):
 - Example images are crops of the Grad-CAM pages in `reports/cwsb_test_report_test_real.pdf`
   (t2_012, t2_078) and `reports/predictions_test_new.pdf` (543.jpg). `hero.jpg` is
   `Data_final/Unhealthy(Infected)/FIELD_IMG_1670.jpg`, resized, metadata stripped.
-- All figures are taken from `models/v1/config.json`, the test report and `PROJECT_STATE.md` as of 2026-11-18.
+- **Audience: officials.** At the user's request (2026-11-18) this version contains no dataset
+  counts, no test results, no limitations table and no technical appendix, and no
+  "Prepared by / Project synopsis / prototype / Kodagu & Chikkamagaluru" labels. Keep it that way
+  when editing. The earlier 10-page internal version (with results) is in git history at `feee910`.

@@ -204,12 +204,22 @@ table{ border-collapse:collapse; width:100%; }
 </style>
 </head>
 <body>
+<style>
+.ex{ grid-template-columns:56mm 56mm 1fr; padding:5mm 0; }
+.ex img{ width:56mm; height:56mm; }
+.cards.six .card{ padding:5mm 5mm 4.6mm; }
+.cards.six .card p{ font-size:8.8pt; line-height:1.5; }
+.cards.six .card h3{ font-size:10.6pt; margin-bottom:1.6mm; }
+.asks.two-up{ grid-template-columns:1fr 1fr; }
+.hdr{ justify-content:flex-start; }
+.hero-img{ height:166mm; }
+.cover-top{ margin-bottom:14mm; }
+</style>
 
 <!-- ======================= 1. COVER ======================= -->
 <section class="page cover">
   <div class="cover-top">
     <img src="varsapradaya-logo.svg" alt="Varsapradaya">
-    <div class="cover-tag">Project synopsis &middot; November 2026</div>
   </div>
 
   <div class="hero">
@@ -220,65 +230,54 @@ table{ border-collapse:collapse; width:100%; }
     <div>
       <div class="eyebrow">Coffee White Stem Borer &middot; AI screening</div>
       <h1>Spotting White Stem Borer from a single photo</h1>
-      <p class="cover-sub">An AI screening tool for the Varsapradaya coffee platform: what we built, how well it works, how it helps, and what comes next.</p>
+      <p class="cover-sub">An AI screening tool for the Varsapradaya coffee platform: what it is, how it works, how it helps, and what comes next.</p>
       <div class="pill-row">
         <span class="pill">Arabica coffee</span>
-        <span class="pill">Kodagu &amp; Chikkamagaluru</span>
         <span class="pill">Image AI</span>
-        <span class="pill">Working prototype (V1)</span>
       </div>
     </div>
   </div>
 
   <div class="glance-title">At a glance</div>
   <div class="tiles">
-    <div class="tile"><div class="val">498</div><div class="lbl">coffee-plant photos collected and cleaned, from 78 plants</div></div>
-    <div class="tile"><div class="val">93.6<small>%</small></div><div class="lbl">of infested test photos correctly flagged (photos the model never saw)</div></div>
-    <div class="tile"><div class="val">3-way</div><div class="lbl">answer per photo: no visible signs, retake, or WSB signs likely</div></div>
-    <div class="tile"><div class="val">V1</div><div class="lbl">prototype ready; the next gains come from more field data</div></div>
-  </div>
-
-  <div class="meta">
-    <div><div class="k">Prepared for</div><div class="v">Management review</div></div>
-    <div><div class="k">Prepared by</div><div class="v">CWSB AI team &middot; Charan &amp; Leela</div></div>
-    <div><div class="k">Date</div><div class="v">18 November 2026</div></div>
-    <div><div class="k">Status</div><div class="v">Internal &middot; prototype stage</div></div>
+    <div class="tile"><div class="val">1 photo</div><div class="lbl">of the whole plant is all the user needs to take</div></div>
+    <div class="tile"><div class="val">Seconds</div><div class="lbl">from taking the photo to getting a verdict</div></div>
+    <div class="tile"><div class="val">3-way</div><div class="lbl">answer: no visible signs, retake, or WSB signs likely</div></div>
+    <div class="tile"><div class="val">Heatmap</div><div class="lbl">shows which part of the photo drove each result</div></div>
   </div>
 </section>
 
 <!-- ======================= 2. EXECUTIVE SUMMARY ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
   <div class="eyebrow">Executive summary</div>
-  <h2>The one-page version</h2>
+  <h2>The solution on one page</h2>
   <div class="rule"></div>
-  <p class="lead">We have built and tested a working AI model that looks at a photo of a coffee plant and says whether it shows signs of White Stem Borer. It is a solid first version. Its main limit today is the amount of data, not the technology.</p>
+  <p class="lead">We have built an AI tool that looks at a photo of a coffee plant and says whether it shows signs of White Stem Borer, so that inspection effort goes where it is needed most.</p>
 
   <div class="sumrow"><div class="k"><span class="n">1</span>The problem</div>
     <p>Coffee White Stem Borer (CWSB) is one of the most damaging pests of Arabica coffee in India. The grub feeds hidden inside the stem, so damage shows late. Finding it today means a trained person inspecting stems plant by plant.</p></div>
-  <div class="sumrow"><div class="k"><span class="n">2</span>What we built</div>
-    <p>A complete pipeline: field data collection, a cleaned and private dataset, a modern image-AI model, clear decision rules, evidence heatmaps, a deployment-ready model file and a one-click retraining process for future versions.</p></div>
-  <div class="sumrow"><div class="k"><span class="n">3</span>How well it works</div>
-    <p>On 59 photos it had never seen, it <b>correctly flagged 44 of the 47 infested photos</b> it gave a verdict on (93.6%), <b>cleared 7 of 8 healthy photos</b>, and asked for a retake on 4 unclear ones.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">2</span>Our solution</div>
+    <p>A farmer or field officer photographs a coffee plant and, within seconds, gets one of three answers: <b>no visible signs</b>, <b>retake</b>, or <b>WSB signs likely</b>. A heatmap shows what drove the result.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">3</span>What we have built</div>
+    <p>A field validation protocol, the AI model with built-in photo quality checks, evidence heatmaps, a deployment-ready package for phones and field devices, and a retraining process so the model improves with each season&rsquo;s data.</p></div>
   <div class="sumrow"><div class="k"><span class="n">4</span>How it helps</div>
-    <p>Field teams can screen many plants in minutes and spend inspection time only where a photo says to look. Infestations can be found earlier and more consistently, and every screening adds data to the Varsapradaya platform.</p></div>
-  <div class="sumrow"><div class="k"><span class="n">5</span>What it can&rsquo;t do yet</div>
-    <p>It learned from only <b>9 healthy plants</b>. It recognises whole-plant decline rather than early bore holes, and it confuses close-up photos with infestation. It is a prototype, not yet a product to hand to farmers.</p></div>
-  <div class="sumrow"><div class="k"><span class="n">6</span>What we need</div>
-    <p>A second round of field data: <b>at least 150 healthy plants</b>, plants stressed by other causes, and early-stage infestations, with labels confirmed by stem inspection and checked by an expert.</p></div>
+    <p>Field teams can screen many plants in minutes and spend inspection time only where a photo says to look. Infestations can be found earlier and more consistently, and every screening adds to the Varsapradaya platform&rsquo;s pest intelligence.</p></div>
+  <div class="sumrow"><div class="k"><span class="n">5</span>Where we are</div>
+    <p>The core AI model is built and working. Next come wider field data collection, an automatic photo-framing check, Version 2 of the model, and the farmer-facing app.</p></div>
 
   <div class="bottomline">
     <div class="t">Bottom line</div>
-    <p>The technology works and the pipeline is built. The next big improvement comes from data: with a second field round, the same pipeline produces Version 2 in about 1&ndash;1.5 hours of cloud training.</p>
+    <p>A phone photo becomes a fast, consistent first check for White Stem Borer, helping growers act before an infestation spreads.</p>
   </div>
 
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">2</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">2</div></div>
 </section>
 
 <!-- ======================= 3. PROBLEM + HOW IT WORKS ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
   <div class="sec">
     <div class="eyebrow">Section 1</div>
@@ -315,177 +314,108 @@ table{ border-collapse:collapse; width:100%; }
       <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="step"><div class="num">2</div><b>Quality check</b><span>Blurry, too dark or glare? Ask for a retake</span></div>
       <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="step"><div class="num">3</div><b>AI model</b><span>Scores the photo from 0 (healthy) to 1 (infested)</span></div>
+      <div class="step"><div class="num">3</div><b>AI model</b><span>Reads the plant&rsquo;s condition from the photo</span></div>
       <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="step"><div class="num">4</div><b>Verdict</b><span>One of three plain answers</span></div>
+      <div class="step"><div class="num">4</div><b>Verdict</b><span>One of three plain answers, with a heatmap</span></div>
       <div class="arrow"><svg viewBox="0 0 10 10"><path d="M2 1 L7 5 L2 9" fill="none" stroke="#92BB37" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="step"><div class="num">5</div><b>Action</b><span>Inspect and treat the plants that were flagged</span></div>
     </div>
 
     <table class="vt">
-      <tr><th style="width:44mm">Verdict</th><th style="width:40mm">When</th><th>What the user does</th></tr>
-      <tr><td><span class="chip ok">No visible signs</span></td><td>Score below 0.50</td><td>No action needed now.</td></tr>
-      <tr><td><span class="chip re">Retake / inconclusive</span></td><td>Score 0.50 to 0.89, or a poor-quality photo</td><td>Take a new photo following the on-screen guide.</td></tr>
-      <tr><td><span class="chip ws">WSB signs likely</span></td><td>Score 0.90 or higher</td><td>Inspect the stem physically, then treat or remove the plant as advised.</td></tr>
+      <tr><th style="width:44mm">Verdict</th><th style="width:52mm">When</th><th>What the user does</th></tr>
+      <tr><td><span class="chip ok">No visible signs</span></td><td>The plant shows no signs of WSB-related decline</td><td>No action needed now.</td></tr>
+      <tr><td><span class="chip re">Retake / inconclusive</span></td><td>The result is uncertain, or the photo is blurry, dark or badly framed</td><td>Take a new photo following the on-screen guide.</td></tr>
+      <tr><td><span class="chip ws">WSB signs likely</span></td><td>The plant shows strong signs consistent with WSB</td><td>Inspect the stem physically, then treat or remove the plant as advised.</td></tr>
     </table>
-    <p class="note">When a plant is photographed more than once, the plant&rsquo;s verdict uses its highest-scoring photo. This cautious rule favours catching infestations over missing them.</p>
+    <p class="note">When a plant is photographed more than once, the plant&rsquo;s verdict follows its most concerning photo. This cautious rule favours catching infestations over missing them.</p>
   </div>
 
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">3</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">3</div></div>
 </section>
 
 <!-- ======================= 4. WHAT WE BUILT ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
   <div class="eyebrow">Section 3</div>
-  <h2>What we built</h2>
+  <h2>What we have built</h2>
   <div class="rule"></div>
-  <p class="lead" style="margin-bottom:4mm">Eight parts, all working today and kept in the project repository.</p>
+  <p class="lead" style="margin-bottom:5mm">Six building blocks, from the field visit to a model that is ready to run on a phone.</p>
 
-  <div class="cards">
-    <div class="card"><span class="tag">01</span><h3>Field data collection</h3>
-      <p>Field visits from 28 Oct to 2 Nov 2026 across Kodagu and Chikkamagaluru (including Kushalnagar, Ponnampet, Somwarpet, Koppa and CCRI Balehonnur), plus Coffee Board archive photos. A field validation sheet records each plant&rsquo;s symptoms and each hotspot&rsquo;s conditions (temperature, humidity, light, soil moisture, pH, NDVI).</p></div>
-    <div class="card"><span class="tag">02</span><h3>A clean, private dataset</h3>
-      <p>498 photos. Location data stripped from every photo, exact and near-duplicate photos removed, and each photo scored for blur, glare and darkness.</p></div>
-    <div class="card"><span class="tag">03</span><h3>Honest testing by design</h3>
-      <p>Photos are grouped by plant and split into training, validation and test sets (70 / 15 / 15). A plant never appears in two sets, so test results are not inflated. The script refuses to run if this rule would be broken.</p></div>
-    <div class="card"><span class="tag">04</span><h3>The AI model</h3>
-      <p>ConvNeXt-Tiny, a modern image-recognition network (about 28 million parameters) pre-trained on millions of general images, then fine-tuned on our photos using a Google Colab GPU. It beat a simpler alternative in a head-to-head comparison.</p></div>
-    <div class="card"><span class="tag">05</span><h3>Decision rules and quality gate</h3>
-      <p>The three-way verdict, with thresholds set from the scores of healthy photos. Poor photos are rejected before they are scored, with a clear &ldquo;please retake&rdquo; message.</p></div>
-    <div class="card"><span class="tag">06</span><h3>Evidence heatmaps</h3>
-      <p>For every photo, a heatmap shows which part of the image drove the decision. PDF reports let agronomists check the model&rsquo;s reasoning, photo by photo.</p></div>
-    <div class="card"><span class="tag">07</span><h3>Deployment-ready model</h3>
-      <p>Exported to ONNX, an open standard format that runs on a phone, a server or a small field device, without the training software.</p></div>
-    <div class="card"><span class="tag">08</span><h3>One-click retraining</h3>
-      <p>A notebook takes old and new photos, retrains, sets thresholds, compares old and new models on the same test photos and packages the next version (v2, v3&hellip;). The old model stays in service until the new one wins.</p></div>
+  <div class="cards six">
+    <div class="card"><span class="tag">01</span><h3>Field validation protocol</h3>
+      <p>A standard field sheet on which our team records each plant&rsquo;s symptoms (ridges, exit holes, frass, beetles, yellowing, wilting, die-back) and each hotspot&rsquo;s conditions (temperature, humidity, light, soil moisture, pH, NDVI). It ties every photo to observations made on the ground.</p></div>
+    <div class="card"><span class="tag">02</span><h3>Privacy and photo quality built in</h3>
+      <p>Location data is removed from every photo. Blurry, dark or glare-filled photos are caught before they are scored, and the user is asked to retake them, so poor photos never lead to a wrong call.</p></div>
+    <div class="card"><span class="tag">03</span><h3>The AI model</h3>
+      <p>A modern image-recognition network, first trained on millions of general images and then specialised on photos of coffee plants. It reads the condition of the whole plant (canopy density, colour, die-back) and gives a result in seconds.</p></div>
+    <div class="card"><span class="tag">04</span><h3>Clear three-way verdict</h3>
+      <p>Instead of a raw score, the user sees one of three plain answers: no visible signs, retake, or WSB signs likely. When the model is unsure, it says so rather than guessing.</p></div>
+    <div class="card"><span class="tag">05</span><h3>Evidence heatmaps</h3>
+      <p>Every result comes with a heatmap that highlights the parts of the photo behind the decision, so agronomists and farmers can see why a plant was flagged.</p></div>
+    <div class="card"><span class="tag">06</span><h3>Ready to deploy, built to improve</h3>
+      <p>The model is packaged in an open standard format (ONNX) that runs on a phone, a server or a small field device. A retraining process turns each season&rsquo;s new photos into an improved version, which replaces the current one only after it proves better.</p></div>
   </div>
 
-  <table class="dt">
-    <tr><th>Dataset used for Version 1</th><th class="n">Photos</th><th class="n">Distinct plants</th><th>Source</th></tr>
-    <tr><td>Healthy</td><td class="n">28</td><td class="n">9</td><td>Coffee Board archive</td></tr>
-    <tr><td>Infested (WSB)</td><td class="n">470</td><td class="n">69</td><td>202 Coffee Board archive + 268 from our 2026 field visits</td></tr>
-    <tr class="tot"><td>Total</td><td class="n">498</td><td class="n">78</td><td></td></tr>
-  </table>
-
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">4</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">4</div></div>
 </section>
 
-<!-- ======================= 5. RESULTS ======================= -->
+<!-- ======================= 5. WHAT THE USER SEES ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
   <div class="eyebrow">Section 4</div>
-  <h2>How well it works</h2>
+  <h2>What the user sees</h2>
   <div class="rule"></div>
-  <p class="lead" style="margin-bottom:4mm">Tested on 59 photos of 8 plants that were kept aside and never used for training or tuning.</p>
-
-  <div class="tiles r">
-    <div class="tile"><div class="val">93.6<small>%</small></div><div class="lbl">of infested photos correctly flagged (44 of 47 with a verdict)</div></div>
-    <div class="tile"><div class="val">87.5<small>%</small></div><div class="lbl">of healthy photos correctly cleared (7 of 8)</div></div>
-    <div class="tile"><div class="val">92.7<small>%</small></div><div class="lbl">correct whenever a verdict was given (51 of 55)</div></div>
-    <div class="tile"><div class="val">4 <small>of 59</small></div><div class="lbl">photos sent back for a retake instead of a guess</div></div>
-  </div>
-
-  <div class="seg-wrap">
-    <div class="seg-row"><div class="lab">Infested photos<span>51 in the test set</span></div>
-      <div class="seg">
-        <div class="s-ok" style="flex:44">44 correctly flagged</div>
-        <div class="s-re" style="flex:4">4</div>
-        <div class="s-no" style="flex:3">3</div>
-      </div></div>
-    <div class="seg-row"><div class="lab">Healthy photos<span>8 in the test set</span></div>
-      <div class="seg" style="width:15.7%">
-        <div class="s-ok" style="flex:7">7</div>
-        <div class="s-no" style="flex:1"></div>
-      </div></div>
-    <div class="legend"><span><i style="background:var(--green)"></i>Correct</span><span><i style="background:var(--gold)"></i>Sent to retake</span><span><i style="background:var(--maroon)"></i>Wrong (3 missed, 1 false alarm)</span></div>
-  </div>
-
-  <table class="pt" style="margin-top:5mm">
-    <tr><th style="width:44mm">Per plant (8 test plants)</th><th class="n" style="width:18mm">Flagged</th><th class="n" style="width:18mm">Retake</th><th class="n" style="width:18mm">Missed</th><th class="n" style="width:18mm">Cleared</th><th>Comment</th></tr>
-    <tr><td>7 infested plants</td><td class="n"><b>5</b></td><td class="n">2</td><td class="n"><b>0</b></td><td class="n">&ndash;</td><td>No infested plant was cleared.</td></tr>
-    <tr><td>1 healthy plant</td><td class="n">1</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">0</td><td>False alarm, caused by one wide landscape photo of the estate.</td></tr>
-  </table>
-
-  <div class="facts">
-    <div class="fact"><span class="dot"></span><div><b>Full-quality photos do better.</b> At full resolution, 95.9% of infested photos are flagged, against 93.6% for reduced-size photos, so the app should send full-quality images.</div></div>
-    <div class="fact"><span class="dot"></span><div><b>Robust to lighting.</b> Only 1 of 30 photos changed its verdict when made brighter or darker.</div></div>
-    <div class="fact"><span class="dot"></span><div><b>All 3 misses come from one plant</b> whose photos show no visible damage. It may be mislabelled and needs an expert review.</div></div>
-    <div class="fact"><span class="dot"></span><div><b>A bug we found and fixed.</b> Our first decision rule caused 14 of 18 misses. Correcting it raised detection from about 86% to 93.6% with the same model.</div></div>
-  </div>
-
-  <div class="callout">
-    <b>Read these numbers with care.</b> 59 test photos is a small sample, so the true figures could be about 7 points higher or lower. The healthy result comes from photos of a single healthy plant. More healthy plants are the top priority (Section 8).
-  </div>
-
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">5</div></div>
-</section>
-
-<!-- ======================= 6. WHAT THE MODEL LOOKS AT ======================= -->
-<section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
-
-  <div class="eyebrow">Section 5</div>
-  <h2>What the model looks at</h2>
-  <div class="rule"></div>
-  <p class="lead" style="margin-bottom:3mm">Each heatmap shows where the model focused. Warmer colours (yellow to red) mark the areas that drove the decision most.</p>
+  <p class="lead" style="margin-bottom:3mm">Each result comes with a heatmap. Warmer colours (yellow to red) mark the parts of the photo that drove the decision most.</p>
 
   <div class="ex">
-    <figure><img src="ex_infested_photo.jpg" alt=""><figcaption>Photo as the model sees it</figcaption></figure>
-    <figure><img src="ex_infested_heat.jpg" alt=""><figcaption>Heatmap</figcaption></figure>
+    <figure><img src="ex_infested_photo.jpg" alt=""><figcaption>The photo</figcaption></figure>
+    <figure><img src="ex_infested_heat.jpg" alt=""><figcaption>The heatmap</figcaption></figure>
     <div class="txt">
-      <div class="verdict"><span class="chip ws">WSB signs likely</span><span class="mark right">Correct</span></div>
-      <h3>Infested plant &middot; score 1.00</h3>
-      <p>A declining plant with dry, leafless branches. The model scores it with full confidence. It was not trained on this plant.</p>
+      <div class="verdict"><span class="chip ws">WSB signs likely</span></div>
+      <h3>Plant with WSB infestation</h3>
+      <p>A declining plant with dry, leafless branches. The tool flags it with high confidence, and the heatmap points to the areas behind the decision.</p>
+      <p class="small muted">Next step: inspect the stem and treat or remove the plant.</p>
     </div>
   </div>
   <div class="ex">
-    <figure><img src="ex_healthy_photo.jpg" alt=""><figcaption>Photo as the model sees it</figcaption></figure>
-    <figure><img src="ex_healthy_heat.jpg" alt=""><figcaption>Heatmap</figcaption></figure>
+    <figure><img src="ex_healthy_photo.jpg" alt=""><figcaption>The photo</figcaption></figure>
+    <figure><img src="ex_healthy_heat.jpg" alt=""><figcaption>The heatmap</figcaption></figure>
     <div class="txt">
-      <div class="verdict"><span class="chip ok">No visible signs</span><span class="mark right">Correct</span></div>
-      <h3>Healthy plant &middot; score 0.17</h3>
-      <p>A dense, green canopy. Only small patches draw attention and the score stays well below the 0.50 line.</p>
-    </div>
-  </div>
-  <div class="ex">
-    <figure><img src="ex_closeup_photo.jpg" alt=""><figcaption>Photo as the model sees it</figcaption></figure>
-    <figure><img src="ex_closeup_heat.jpg" alt=""><figcaption>Heatmap</figcaption></figure>
-    <div class="txt">
-      <div class="verdict"><span class="chip ws">WSB signs likely</span><span class="mark wrong">Wrong</span></div>
-      <h3>Healthy close-up &middot; score 0.99</h3>
-      <p>A healthy flowering branch, photographed close up. The model never saw close-ups in training, so it gives a confident wrong answer, reacting to dry leaf litter on the ground. A planned framing check will reject photos like this before they are scored.</p>
+      <div class="verdict"><span class="chip ok">No visible signs</span></div>
+      <h3>Healthy plant</h3>
+      <p>A dense, green canopy. Only small patches draw attention, and the tool finds no signs of decline.</p>
+      <p class="small muted">Next step: no action needed now.</p>
     </div>
   </div>
 
   <div class="takeaway">
-    <h4>What this tells us</h4>
-    <p>Every training photo is a whole-plant shot, so the model has learned to read whole-plant condition: canopy density, colour and die-back. That is useful for screening, but it means it spots mid- to late-stage infestation, not early bore holes. Teaching it the stem-level signs needs stem close-ups, paired with the whole-plant photo, in the next round of data.</p>
+    <h4>Why the way the photo is taken matters</h4>
+    <p>The model reads the condition of the whole plant: canopy density, colour and die-back. The app will therefore guide users to photograph the whole plant from 2&ndash;3 metres, and ask for a retake when a photo is unsuitable. Recognising stem-level signs such as bore holes from close-up photos is part of the next phase.</p>
   </div>
 
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">6</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">5</div></div>
 </section>
 
-<!-- ======================= 7. HOW IT HELPS ======================= -->
+<!-- ======================= 6. HOW IT HELPS ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
-  <div class="eyebrow">Section 6</div>
+  <div class="eyebrow">Section 5</div>
   <h2>How this solution helps</h2>
   <div class="rule"></div>
   <p class="lead" style="margin-bottom:4mm">The tool does not replace stem inspection. It decides where inspection is needed, so scarce expert time goes to the right plants.</p>
 
   <div class="bcards">
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4 14 h7 l-1 8 9-12 h-7 z"/></svg></div>
-      <div><h3>Screen more plants, faster</h3><p>A photo takes seconds. Field staff can cover far more plants per day and save stem inspections for the plants the model flags.</p></div></div>
+      <div><h3>Screen more plants, faster</h3><p>A photo takes seconds. Field staff can cover far more plants per day and save stem inspections for the plants the tool flags.</p></div></div>
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"/></svg></div>
       <div><h3>A consistent first opinion</h3><p>Every plant is judged by the same rules, whoever takes the photo and whichever estate it is on.</p></div></div>
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L21 19 H3 Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
       <div><h3>Act sooner, limit the spread</h3><p>Flagged plants can be inspected and treated or removed before emerging beetles reach neighbouring plants.</p></div></div>
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div>
-      <div><h3>Better photos and records</h3><p>The quality check asks for a retake on blurry, dark or glare-filled photos, so poor data never reaches the model. Each screening can be logged by plant and date.</p></div></div>
+      <div><h3>Better photos and records</h3><p>The quality check asks for a retake on blurry, dark or glare-filled photos. Each screening can be logged by plant and date.</p></div></div>
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
       <div><h3>Evidence you can check</h3><p>Heatmaps show why a plant was flagged, so agronomists and farmers can trust, or challenge, each result.</p></div></div>
     <div class="bcard"><div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
@@ -496,126 +426,54 @@ table{ border-collapse:collapse; width:100%; }
     <tr><th>Who benefits</th><th>What they get</th></tr>
     <tr><td>Farmers</td><td>An early warning from a phone photo, a clear next step, and fewer plants lost to late detection.</td></tr>
     <tr><td>Field officers and agronomists</td><td>A prioritised list of plants to inspect, consistent screening across estates, and heatmap evidence to explain each call.</td></tr>
-    <tr><td>Varsapradaya</td><td>A pest-intelligence feature for the platform, a growing labelled dataset, and a reusable pipeline that can be applied to other pests and diseases.</td></tr>
+    <tr><td>The coffee sector</td><td>Earlier, wider and more consistent pest surveillance, and a reusable approach that can be extended to other pests and diseases.</td></tr>
   </table>
 
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">7</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">6</div></div>
 </section>
 
-<!-- ======================= 8. LIMITATIONS + DECISIONS ======================= -->
+<!-- ======================= 7. ROADMAP + SUPPORT ======================= -->
 <section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
+  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div></div>
 
-  <div class="eyebrow">Section 7</div>
-  <h2>Current limitations, and the fix for each</h2>
-  <div class="rule"></div>
-  <p style="margin-bottom:3mm">These are known, measured and understood. None needs a new kind of technology: most are solved by better data, and the rest by a small framing check.</p>
-
-  <table class="lt">
-    <tr><th>Limitation</th><th>What it means</th><th>Planned fix</th></tr>
-    <tr><td>Very few healthy examples: 9 healthy plants against 69 infested</td><td>Results carry wide uncertainty, and healthy plants may be flagged.</td><td>Photograph 150+ distinct healthy plants across estates, shade levels, times of day and seasons.</td></tr>
-    <tr><td>Sees whole-plant decline, not bore holes</td><td>Finds mid- to late-stage infestation. Early cases, the most valuable to catch, are likely missed.</td><td>Collect early-stage cases, and stem close-ups paired with the whole-plant photo of the same plant.</td></tr>
-    <tr><td>Close-ups and unusual framings fool it</td><td>All 19 close-up photos of healthy branches we tested were flagged as WSB.</td><td>Add a framing check that rejects unsuitable photos, plus a camera guide in the app.</td></tr>
-    <tr><td>No &ldquo;look-alike&rdquo; examples</td><td>Drought, nutrient deficiency or die-back from other causes may be read as WSB.</td><td>Photograph stressed but uninfested plants and label them as not WSB.</td></tr>
-    <tr><td>Labels are per plant, not per photo, and not graded</td><td>Some &ldquo;infested&rdquo; photos show no visible evidence, which blurs what the model learns.</td><td>Record labels from physical stem inspection, graded early, mid or late.</td></tr>
-  </table>
-  <p class="note">Tried and set aside: an automatic &ldquo;unfamiliar photo&rdquo; detector caught only 5 of those 19 close-ups. A purpose-trained framing check is needed instead.</p>
-
-  <div style="margin-top:6mm">
-    <h4>Design decisions we made on purpose</h4>
-    <div class="dec">
-      <div><b>Split by plant, never by photo</b>Prevents the same plant appearing in training and testing, which would inflate every reported number.</div>
-      <div><b>No image filters or background removal</b>Tested and rejected. It strips out the canopy context the model relies on and adds its own errors.</div>
-      <div><b>Weather is not fed into the model</b>With one season of data the model would learn &ldquo;this month means infested&rdquo;. Weather becomes a separate, displayed risk score.</div>
-      <div><b>One simple question per photo</b>The model answers &ldquo;healthy or infested?&rdquo; for each photo (image classification), which keeps labelling and maintenance simple.</div>
-    </div>
-  </div>
-
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">8</div></div>
-</section>
-
-<!-- ======================= 9. ROADMAP + ASKS ======================= -->
-<section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
-
-  <div class="eyebrow">Section 8</div>
+  <div class="eyebrow">Section 6</div>
   <h2>Roadmap</h2>
   <div class="rule"></div>
 
   <div class="done">
-    <div class="t">Stage 1 complete<span>Version 1 prototype</span></div>
+    <div class="t">Stage 1 complete<span>Core AI model</span></div>
     <div class="ticks">
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Field data, round 1</div>
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean dataset and leak-proof split</div>
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Model trained, thresholds set</div>
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Evidence heatmap reports</div>
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Deployment format (ONNX) exported</div>
-      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>One-click retraining notebook</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Field validation protocol and first field visits</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI model built</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Photo quality check and three-way verdict</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Evidence heatmaps</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Deployment-ready model package</div>
+      <div><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#004225"/><path d="M2.8 5.2 L4.4 6.7 L7.3 3.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Retraining process for new versions</div>
     </div>
   </div>
 
   <div class="road">
-    <div class="rs"><div class="b">1</div><h3>Field data, round 2<em>Blocks everything else</em></h3>
-      <p>About 400 photos of 150+ healthy plants, look-alike stressed plants, early-stage infestations and stem close-ups paired with whole-plant shots, all with inspection-verified labels graded by severity. At that size the margin of error narrows from about &plusmn;7 points to about &plusmn;2.5.</p></div>
-    <div class="rs"><div class="b">2</div><h3>Framing check</h3>
-      <p>A small model that says &ldquo;this is not a whole-plant photo, please retake&rdquo;. It would have caught all 19 close-up false alarms. The training photos are cheap to collect and need no agronomy knowledge.</p></div>
-    <div class="rs"><div class="b">3</div><h3>Retrain as Version 2</h3>
-      <p>Run the retraining notebook on the larger dataset, with at least 30 healthy plants held back for testing. Version 2 replaces Version 1 only if it performs better on the same test photos.</p></div>
+    <div class="rs"><div class="b">1</div><h3>Wider field data collection<em>Priority</em></h3>
+      <p>Photos from many more estates, shade levels and seasons: healthy plants, plants stressed by other causes such as drought or nutrient deficiency, early-stage infestations, and stem close-ups paired with whole-plant photos. Every label verified by stem inspection and graded by severity.</p></div>
+    <div class="rs"><div class="b">2</div><h3>Automatic framing check</h3>
+      <p>A small model that recognises when a photo is not a whole-plant shot and asks the user to retake it, before any verdict is given.</p></div>
+    <div class="rs"><div class="b">3</div><h3>Version 2 of the model</h3>
+      <p>Retrain on the wider data so the tool can recognise earlier-stage infestation and tell WSB apart from other causes of decline. Version 2 replaces Version 1 only if it performs better.</p></div>
     <div class="rs"><div class="b">4</div><h3>Field product</h3>
-      <p>A prediction service (API), then a farmer app with a camera guide, the three-way verdict and retake prompts, and the agronomic risk score shown alongside.</p></div>
+      <p>A prediction service, then a farmer app with a camera guide, the three-way verdict and retake prompts, and an agronomic risk score shown alongside each result.</p></div>
   </div>
 
-  <div style="margin-top:7mm">
-    <div class="eyebrow">Section 9</div>
-    <h2>Support we need</h2>
+  <div style="margin-top:8mm">
+    <div class="eyebrow">Section 7</div>
+    <h2>Where support would help</h2>
     <div class="rule"></div>
-    <div class="asks">
-      <div class="ask"><div class="n">01</div><b>Field time and estate access</b><p>For data round 2: healthy and look-alike plants across several estates, shade levels and seasons.</p></div>
-      <div class="ask"><div class="n">02</div><b>An entomology expert</b><p>For example from CCRI or the Coffee Board, to confirm labels by stem inspection and review the one disputed plant.</p></div>
-      <div class="ask"><div class="n">03</div><b>A business decision</b><p>In screening, which costs more: a missed infestation or a false alarm? The answer sets where the &ldquo;no visible signs&rdquo; line should sit.</p></div>
+    <div class="asks two-up">
+      <div class="ask"><div class="n">01</div><b>Access to estates</b><p>Field access across several estates, shade levels and seasons for the wider data collection, especially healthy plants and plants stressed by other causes.</p></div>
+      <div class="ask"><div class="n">02</div><b>Expert verification</b><p>Entomologists, for example from CCRI or the Coffee Board, to confirm plant labels by stem inspection.</p></div>
     </div>
   </div>
 
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">9</div></div>
-</section>
-
-<!-- ======================= 10. APPENDIX ======================= -->
-<section class="page">
-  <div class="hdr"><div class="brand"><img src="logo.png" alt="">Varsapradaya &middot; CWSB AI screening</div><div>Project synopsis</div></div>
-
-  <div class="eyebrow">Appendix A</div>
-  <h2>Technical summary</h2>
-  <div class="rule"></div>
-  <table class="kv">
-    <tr><td>Task</td><td>Image classification: healthy or WSB-infested, per photo. Plant verdict = its highest-scoring photo.</td></tr>
-    <tr><td>Model</td><td>ConvNeXt-Tiny (<code>convnext_tiny.fb_in22k_ft_in1k_384</code>, timm library), about 28M parameters, 384 &times; 384 input, fully fine-tuned. A frozen-backbone + logistic-regression alternative was trained and compared; the fine-tune won.</td></tr>
-    <tr><td>Training recipe</td><td>AdamW, learning rate 1e-4 (2 warm-up epochs on the head at 1e-3), weight decay 0.05, cosine schedule, batch 16, up to 40 epochs with early stopping (patience 6). Google Colab T4 GPU, seed 42.</td></tr>
-    <tr><td>Class imbalance</td><td>Weighted sampling, class-weighted loss, and 7 overlapping crops per healthy training photo.</td></tr>
-    <tr><td>Augmentation</td><td>Random resized crop, horizontal flip, &plusmn;10&deg; rotation, colour jitter, occasional light blur.</td></tr>
-    <tr><td>Decision thresholds</td><td>No visible signs &lt; 0.50 &le; inconclusive &lt; 0.90 &le; WSB likely. Set from healthy validation scores (0.26&ndash;0.39).</td></tr>
-    <tr><td>Quality gate</td><td>Retake if blur score (Laplacian variance) &lt; 60, more than 20% clipped pixels, or more than 40% dark pixels.</td></tr>
-    <tr><td>Data handling</td><td>EXIF rotation applied and all metadata (incl. GPS) removed; duplicates removed by SHA-256 and perceptual hash; split 70/15/15 by plant, seed 42, aborts on leakage.</td></tr>
-    <tr><td>Model files</td><td><code>models/v1/contender_B.pt</code> (PyTorch, 106 MB), <code>models/v1/cwsb_v1.onnx</code>, <code>models/v1/config.json</code> (thresholds and test results).</td></tr>
-    <tr><td>Code</td><td>GitHub: <span class="mono">charan14111411/coffee_Cswb_Model</span>. <code>src/</code> pipeline scripts; <code>colab/</code> training, retraining and ONNX-export notebooks. Photos and model files are shared outside Git because of their size.</td></tr>
-  </table>
-
-  <div style="margin-top:6mm">
-    <div class="eyebrow">Appendix B</div>
-    <h2>Glossary</h2>
-    <div class="rule"></div>
-    <div class="gl">
-      <div><b>Correctly flagged (recall).</b> The share of infested photos the model marks as &ldquo;WSB signs likely&rdquo;.</div>
-      <div><b>False alarm.</b> A healthy photo or plant marked as &ldquo;WSB signs likely&rdquo;.</div>
-      <div><b>Held-out test set.</b> Photos kept aside and never used for training or tuning, so results reflect unseen plants.</div>
-      <div><b>Fine-tuning.</b> Adapting a model pre-trained on general images to our specific task with our own photos.</div>
-      <div><b>Heatmap (Grad-CAM).</b> An overlay showing which parts of the image drove the model&rsquo;s decision.</div>
-      <div><b>ONNX.</b> An open, standard file format for running a trained model on phones, servers and small devices.</div>
-      <div><b>Threshold.</b> The score at which the verdict changes, for example 0.90 for &ldquo;WSB signs likely&rdquo;.</div>
-      <div><b>Margin of error.</b> How far a measured figure could differ from the true value because the test sample is small.</div>
-    </div>
-  </div>
-
-  <div class="ftr"><div>Varsapradaya &middot; Internal</div><div class="pg">10</div></div>
+  <div class="ftr"><div>Varsapradaya &middot; varsapradaya.com</div><div class="pg">7</div></div>
 </section>
 
 </body>

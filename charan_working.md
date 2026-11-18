@@ -124,3 +124,13 @@ interpreted. No YOLO / detector work is mentioned (project is classification onl
    cleared (9 WSB likely, 6 retake, 1 blurry), which would be worth stating in `PROJECT_STATE.md`.
 2. `models/v1/cwsb_v1.onnx` (13 Nov) exists on this machine but `PROJECT_STATE.md` does not list
    it or a parity result. If the 4-decimal parity check passed, please record the number.
+
+### 2026-11-18 (later) — Synopsis reworked for officials
+
+The synopsis is going to officials, not only the manager. At the user's request the PDF is now a
+**7-page solution overview** with no dataset information and no test details: removed the dataset
+table and all counts, the results page, the close-up failure example, the limitations/design-decisions
+page, the technical appendix and glossary, the cover meta block (prepared for/by, date, status),
+the "Project synopsis" labels, and the "Kodagu & Chikkamagaluru" and "Working prototype (V1)" pills.
+Footer changed from "Internal" to "varsapradaya.com". Roadmap and asks kept, with numbers removed.
+The internal 10-page version with results is still in git history (`feee910`).
