@@ -22,6 +22,13 @@ ROOT = Path(__file__).resolve().parents[1]
 CFG = json.loads((ROOT / "models" / "v1" / "config.json").read_text())
 T_LOW, T_HIGH, IMG = CFG["T_low"], CFG["T_high"], CFG["img"]
 
+# Background removal is NOT a choice made here. The trained model declares in
+# its config whether it was trained on background-removed images; serving then
+# has to do the same thing or the scores are meaningless. Training and serving
+# can therefore never drift apart by someone forgetting a flag.
+REMOVE_BG = bool(CFG.get("remove_bg", False))
+BG_FILL = CFG.get("remove_bg_fill", "blur")
+
 # Quality gate (same numbers as cleaning and the planned API)
 BLUR_MIN, CLIPPED_MAX, DARK_MAX = 60.0, 0.20, 0.40
 EXTS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
@@ -58,9 +65,11 @@ def main():
         print(f"no images found in {folder}")
         return
     print(f"{len(paths)} images in {folder}")
-    print(f"thresholds: no signs < {T_LOW} | inconclusive | >= {T_HIGH} WSB likely\n")
+    print(f"thresholds: no signs < {T_LOW} | inconclusive | >= {T_HIGH} WSB likely")
+    print(f"background removal: {'ON (fill: ' + BG_FILL + ') - as the model was trained' if REMOVE_BG else 'OFF - as the model was trained'}\n")
 
     import make_report_pdf as M  # reuse the model loader and Grad-CAM
+    import remove_bg
     model = M.load_model()
 
     rows, cache = [], {}
@@ -71,15 +80,21 @@ def main():
             print(f"  {p.name}: cannot open ({e})")
             continue
         blur, clipped, dark, reject = quality(pil)
+        bg_done = ""
         if reject:
             score, verdict, cam = None, "INCONCLUSIVE - " + reject, None
         else:
+            if REMOVE_BG:
+                # quality is judged on the real photo, the model sees the
+                # processed one - exactly the order used during training
+                pil, ok, kept = remove_bg.apply(pil, BG_FILL)
+                bg_done = f"removed ({kept:.0%} kept)" if ok else "UNCHANGED - no stem found"
             score, cam = M.score_and_cam(model, pil)
             verdict = M.verdict_of(score)
         rows.append({"file": str(p.relative_to(folder)), "score": "" if score is None else round(score, 4),
                      "verdict": verdict, "blur": round(blur, 1),
                      "clipped": round(clipped, 4), "dark": round(dark, 4),
-                     "size": f"{pil.width}x{pil.height}"})
+                     "size": f"{pil.width}x{pil.height}", "background": bg_done})
         if cam is not None:
             cache[str(p.relative_to(folder))] = (np.array(M.disp_tf(pil)), cam, score, verdict)
         s = "gate" if score is None else f"{score:.3f}"
