@@ -15,10 +15,12 @@ returned unchanged, with `ok=False`. Whole-plant canopy photos fail this way
 about 80% of the time - there is no figure/ground to separate - so this is
 for stem close-ups only.
 
+  python src/remove_bg.py images_16_11 --check          # CAN I use removal on this data?
   python src/remove_bg.py images_16_11 --out work/nobg/images_16_11
   python src/remove_bg.py images_16_11 --out work/nobg/x --fill blur --preview
 """
 import argparse
+import random
 from pathlib import Path
 
 import cv2
@@ -90,10 +92,52 @@ def apply(pil, fill="black"):
     return Image.fromarray(out.astype(np.uint8)), True, kept
 
 
+GOOD, RISKY = 0.90, 0.75     # share of photos that must process cleanly
+
+
+def check(paths, sample=40):
+    """Decide whether a dataset may be trained with REMOVE_BACKGROUND = True.
+
+    Answers the only question that matters before a retrain: will this run
+    produce a fully processed dataset, or a half-processed one?
+    """
+    random.seed(42)
+    picked = random.sample(paths, min(sample, len(paths)))
+    ok_n, keeps = 0, []
+    for p in picked:
+        pil = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
+        pil.thumbnail((900, 900))
+        _, ok, kept = apply(pil)
+        ok_n += bool(ok)
+        if ok:
+            keeps.append(kept)
+    rate = ok_n / len(picked)
+
+    print(f"checked {len(picked)} of {len(paths)} photos")
+    print(f"background could be removed from {ok_n} ({rate:.0%})")
+    if keeps:
+        print(f"stem area kept: median {np.median(keeps):.0%}")
+    print()
+    if rate >= GOOD:
+        print("VERDICT: YES - you can train this data with REMOVE_BACKGROUND = True.")
+    elif rate >= RISKY:
+        print(f"VERDICT: RISKY - {1 - rate:.0%} of photos would pass through untouched,")
+        print("         giving a half-processed dataset. Either train with")
+        print("         REMOVE_BACKGROUND = False, or remove the photos that fail.")
+    else:
+        print(f"VERDICT: NO - keep REMOVE_BACKGROUND = False. Only {rate:.0%} of these")
+        print("         photos have a separable stem. These look like whole-plant")
+        print("         canopy shots, where the background is more coffee plant and")
+        print("         there is nothing to cut away.")
+    return rate
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("folder")
-    ap.add_argument("--out", required=True, help="where the processed copies go")
+    ap.add_argument("--check", action="store_true",
+                    help="only report whether this data can be trained with removal on")
+    ap.add_argument("--out", help="where the processed copies go (not needed with --check)")
     ap.add_argument("--fill", choices=["black", "grey", "blur"], default="black")
     ap.add_argument("--preview", action="store_true",
                     help="also write a before/after contact sheet PDF")
@@ -101,11 +145,21 @@ def main():
 
     src = Path(args.folder)
     src = src if src.is_absolute() else ROOT / src
+    paths = sorted(p for p in src.rglob("*") if p.suffix.lower() in EXTS)
+    if not paths:
+        print(f"no images found in {src}")
+        return
+
+    if args.check:
+        print(f"{len(paths)} images in {src}\n")
+        check(paths)
+        return
+
+    if not args.out:
+        ap.error("--out is required unless you pass --check")
     dst = Path(args.out)
     dst = dst if dst.is_absolute() else ROOT / dst
     dst.mkdir(parents=True, exist_ok=True)
-
-    paths = sorted(p for p in src.rglob("*") if p.suffix.lower() in EXTS)
     print(f"{len(paths)} images in {src}  ->  {dst}   (fill: {args.fill})")
 
     done, skipped, keeps, shots = 0, [], [], []
