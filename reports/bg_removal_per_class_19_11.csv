@@ -1,0 +1,299 @@
+set,file,ok,kept
+Data_final/Healthy (whole-plant),CB_2_DSC01020.jpg,True,0.348
+Data_final/Healthy (whole-plant),CB_2_DSC01023.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_3_DSC01010.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0271.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0284.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0285.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0288.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0289.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0290.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0293.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0294.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0295.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0331.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_DSC_0332.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103425.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103526.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103530.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103541.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103700.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103716.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103755.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103856.jpg,False,0.02
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103903.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_103912.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_104109.jpg,True,0.292
+Data_final/Healthy (whole-plant),CB_IMG_20170725_104812.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_105318.jpg,False,0.0
+Data_final/Healthy (whole-plant),CB_IMG_20170725_110503.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0097.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_DSC00963.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC00997.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0145.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01022.jpg,False,0.003
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01000.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC00973.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_DSC01009.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0144.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_(2).jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0121.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_IMG_20170725_104300.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0062.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_IMG_20170725_110241.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0084.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC_0032.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC01024.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC00998.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_IMG_20170725_110253.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC00971.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC00991.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC01042.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0087.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_IMG_20170725_104424.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0066.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_IMG_20170725_110337.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0106.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0146.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC_0031.jpg,False,0.001
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC00972.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_IMG_20170725_104702.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0081.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01034.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC00965.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_IMG_20170705_103633.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0142.jpg,False,0.031
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC00995.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0117.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_DSC01026.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0138.jpg,False,0.002
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC00994.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0149.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0139.jpg,False,0.058
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01029.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_IMG_20170725_110328.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01005.jpg,False,0.001
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC00996.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0135.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01015.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC01031.jpg,False,0.001
+Data_final/Unhealthy CB_ (whole-plant),CB_5_stage_plant_with_healthy_plants.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0060.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_DSC00975.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01028.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_IMG_20170725_105351.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0064.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC_0020.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01006.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_IMG_20170725_110217.jpg,True,0.307
+Data_final/Unhealthy CB_ (whole-plant),CB_2_IMG_20170725_104531.jpg,False,0.004
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0085.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC00978.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01039.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0076.jpg,False,0.007
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0137.jpg,False,0.004
+Data_final/Unhealthy CB_ (whole-plant),CB_3.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0091.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0098.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_IMG_20170725_110309.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01012.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_3_IMG_20170725_103614.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01013.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01004.jpg,False,0.001
+Data_final/Unhealthy CB_ (whole-plant),CB_3_IMG_20170725_110452.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_DSC01017.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_DSC01003.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_5_stage_plant_with_healthy_plants_(3).jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_DSC_0102.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_4_IMG_20170725_104755.jpg,False,0.0
+Data_final/Unhealthy CB_ (whole-plant),CB_2_DSC01027.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1489.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1528.jpg,True,0.163
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1479.jpg,True,0.255
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1684.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1602.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1541.jpg,False,0.003
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1515.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1573.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1394.jpg,True,0.102
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1520.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1306.jpg,True,0.184
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1568.jpg,False,0.001
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1617.jpg,True,0.397
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1462.jpg,True,0.322
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2509.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1443.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1681.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2493.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1548.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1672.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1591.jpg,True,0.182
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1476.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2504.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1574.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1530.jpg,False,0.001
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1504.jpg,False,0.007
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1674.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1682.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1571.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2510.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1402.jpg,True,0.14
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1461.jpg,True,0.329
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1401.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1457.jpg,True,0.204
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1598.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1546.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1540.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2519.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1599.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1553.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1512.jpg,True,0.117
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1676.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1505.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1494.jpg,True,0.119
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1445.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1683.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1533.jpg,True,0.15
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1529.jpg,True,0.161
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1314.jpg,True,0.323
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1601.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1291.jpg,True,0.118
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2512.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1411.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1567.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1414.jpg,True,0.157
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1614.jpg,True,0.118
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1581.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1511.jpg,False,0.033
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1556.jpg,True,0.228
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2505.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1501.jpg,True,0.183
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1499.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1657.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1522.jpg,False,0.058
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1538.jpg,True,0.136
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1458.jpg,True,0.171
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1544.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1279.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1659.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1592.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1395.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1609.jpg,True,0.171
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1679.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1600.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2506.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1687.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_2522.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1664.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1471.jpg,False,0.0
+Data_final/Unhealthy FIELD_ (whole-plant),FIELD_IMG_1514.jpg,True,0.178
+"test_new (healthy close-ups, falsely flagged)",543.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (1).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (10).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (11).jpg,True,0.119
+"test_new (healthy close-ups, falsely flagged)",Image (12).jpg,True,0.274
+"test_new (healthy close-ups, falsely flagged)",Image (13).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (14).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (15).jpg,True,0.273
+"test_new (healthy close-ups, falsely flagged)",Image (16).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (17).jpg,True,0.275
+"test_new (healthy close-ups, falsely flagged)",Image (18).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (19).jpg,True,0.089
+"test_new (healthy close-ups, falsely flagged)",Image (2).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (2)1111.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (20).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (21).jpg,True,0.289
+"test_new (healthy close-ups, falsely flagged)",Image (22).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (3).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (3)33333.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (4).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (4)44.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (5).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (5)11.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (6).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (6)33.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (7).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image (8).jpg,False,0.016
+"test_new (healthy close-ups, falsely flagged)",Image (9).jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image.jpg,False,0.0
+"test_new (healthy close-ups, falsely flagged)",Image555556.jpg,False,0.0
+external_repo (infested stem close-ups),42_JPG.rf.e2e77a5cf5a8a8bf6da2c63c6d1b9187.jpg,False,0.0
+external_repo (infested stem close-ups),rb_43_JPG.rf.e80cd81c0ae01941710c10c2e44a267c.jpg,False,0.031
+external_repo (infested stem close-ups),17_jpg.rf.98255c760b57651cab41f41b4f218a1f.jpg,True,0.248
+external_repo (infested stem close-ups),vf_1_JPG.rf.d67a2ccdee207421f246ef5ccc0968c8.jpg,False,0.0
+external_repo (infested stem close-ups),21_jpg.rf.c2880d2939c83701b4697482dac5f870.jpg,False,0.0
+external_repo (infested stem close-ups),vf_1_JPG.rf.611b1c70b91f4534cc0f752e8a1406e1.jpg,False,0.0
+external_repo (infested stem close-ups),hf_22_jpg.rf.7a505032f67fe3a99e763f548d48b2de.jpg,False,0.0
+external_repo (infested stem close-ups),rc_15_jpg.rf.83353c15d542f46902e242c95bda7644.jpg,False,0.0
+external_repo (infested stem close-ups),vf_29_jpg.rf.edbe47ee4fee7b843807b7467ec9a4dc.jpg,True,0.111
+external_repo (infested stem close-ups),47_JPG.rf.bb2c0cd9db31dfe477b15abf213502a7.jpg,True,0.218
+external_repo (infested stem close-ups),rc_16_jpg.rf.7bd5b1f5922f98b9dbab22ce08e01397.jpg,True,0.336
+external_repo (infested stem close-ups),rb_14_png.rf.bf2aa9dc99d347cbbb64ace7464a96a1.jpg,True,0.357
+external_repo (infested stem close-ups),30_jpg.rf.e0043edbbf00933ee432caf3499d0348.jpg,True,0.216
+external_repo (infested stem close-ups),14_png.rf.cb3935c86c09403d924804e0efc0ae62.jpg,True,0.358
+external_repo (infested stem close-ups),rc_44_JPG.rf.6c7eb82a1fe289b2381d2fbf8dd44ab5.jpg,False,0.03
+external_repo (infested stem close-ups),hf_29_jpg.rf.0e74949409b3a48f9d1b56173acc17ac.jpg,True,0.111
+external_repo (infested stem close-ups),vf_4_JPG.rf.4654ed65d7f158be84bc761f238fb44b.jpg,True,0.124
+external_repo (infested stem close-ups),rc_4_JPG.rf.80a810461835f1eec3068e821c96bc6e.jpg,False,0.0
+external_repo (infested stem close-ups),rc_38_jpg.rf.fcb81e3a4f1e3a164fbbf59379d1da55.jpg,True,0.114
+external_repo (infested stem close-ups),7_JPG.rf.56149c3319ab040431f3e8eb1aa0c476.jpg,True,0.099
+external_repo (infested stem close-ups),42_JPG.rf.a4aa38ca82b3d5806b3d1fb225d1f809.jpg,False,0.0
+external_repo (infested stem close-ups),rb_11_png.rf.9a94239e3857e57cd36d11312ea71e86.jpg,True,0.23
+external_repo (infested stem close-ups),44_JPG.rf.a98656d51da4cd55ea78c10ada4998de.jpg,True,0.133
+external_repo (infested stem close-ups),rc_22_jpg.rf.5b2861d9edfa496cecd843dc400dfb1e.jpg,True,0.187
+external_repo (infested stem close-ups),vf_32_jpg.rf.cf66498091857f3e6faf77913f4afd45.jpg,False,0.0
+external_repo (infested stem close-ups),rc_31_jpg.rf.dded1ec88b49e8530587382cdc283ab8.jpg,True,0.205
+external_repo (infested stem close-ups),rc_20_jpg.rf.85ae36401a5c78bd2314feec16668bc4.jpg,False,0.0
+external_repo (infested stem close-ups),rc_13_png.rf.e50f3ce480418aa3ff859a558c8bb171.jpg,True,0.376
+external_repo (infested stem close-ups),15_jpg.rf.4f7fc151a75832b0a7eee1fb6cf989c0.jpg,True,0.375
+external_repo (infested stem close-ups),rc_36_jpg.rf.aa3c2f9093cfe55308671f5bf1d88309.jpg,True,0.224
+external_repo (infested stem close-ups),hf_34_jpg.rf.0e02c12d137b2cf0571240155dc5c8d0.jpg,True,0.175
+external_repo (infested stem close-ups),rc_10_png.rf.bb99a1c51397b66d6eeddf195ba26346.jpg,True,0.306
+external_repo (infested stem close-ups),hf_38_jpg.rf.32ed6e91e1add3735d49b9347c7d9398.jpg,True,0.122
+external_repo (infested stem close-ups),34_jpg.rf.50926d9c3c4a36aad5deb019b3b920a4.jpg,True,0.175
+external_repo (infested stem close-ups),rc_43_JPG.rf.739509f2f329007342976946fe079d1b.jpg,False,0.032
+external_repo (infested stem close-ups),hf_8_jpg.rf.d56adb2ed9c30ffc6bd9a5939127594e.jpg,True,0.275
+external_repo (infested stem close-ups),25_JPG.rf.b0c4d297c21392ed4f48638edf1ec099.jpg,True,0.189
+external_repo (infested stem close-ups),vf_46_JPG.rf.c5f31295f5704bb4490989fa395aa1f5.jpg,False,0.0
+external_repo (infested stem close-ups),vf_38_jpg.rf.b69b109a8d285a195fa500ac372ce9dc.jpg,True,0.15
+external_repo (infested stem close-ups),hf_30_jpg.rf.e8b065419d6b02bb7fa757178981021e.jpg,True,0.216
+external_repo (infested stem close-ups),hf_16_jpg.rf.194bae34e875296189665236ed0a02f7.jpg,True,0.33
+external_repo (infested stem close-ups),12_png.rf.0ad6543825627289f4d92f5347e56e88.jpg,True,0.123
+external_repo (infested stem close-ups),hf_16_jpg.rf.35bfd54f3d1ac3cdf8c09e58ba0bf358.jpg,True,0.33
+external_repo (infested stem close-ups),rc_29_jpg.rf.228d488109e3432c77e717b60a64a951.jpg,True,0.111
+external_repo (infested stem close-ups),vf_44_JPG.rf.d7a153fbcbae11b71c9555c496d3b7f6.jpg,False,0.038
+external_repo (infested stem close-ups),24_JPG.rf.00fa747c8069dab0711f6bf6c9b4a341.jpg,True,0.128
+external_repo (infested stem close-ups),27_jpg.rf.0de64cd5d08ffed9e9652da1a96ff44d.jpg,True,0.081
+external_repo (infested stem close-ups),vf_22_jpg.rf.d50c9f09e37f71420ed76aadcc9f3387.jpg,True,0.212
+external_repo (infested stem close-ups),rb_8_jpg.rf.9e1b45dfb43ddce9bc1e9edcf01ae8b5.jpg,True,0.276
+external_repo (infested stem close-ups),vf_3_JPG.rf.d730af8b768044839ca23c306a30080d.jpg,False,0.0
+external_repo (infested stem close-ups),20_jpg.rf.6f6a075c403570163af2ea94ecb6b27e.jpg,False,0.0
+external_repo (infested stem close-ups),vf_29_jpg.rf.d2549e638e1ccbcc3f1e5c1435d56b75.jpg,True,0.114
+external_repo (infested stem close-ups),rc_20_jpg.rf.88a8838891e5287546c7061f7f8e314a.jpg,False,0.0
+external_repo (infested stem close-ups),vf_30_jpg.rf.247c6d5c2a8273ba5d47a01b0d976824.jpg,True,0.216
+external_repo (infested stem close-ups),36_jpg.rf.a62a1c22d6e7a25cd161ce6b20375c78.jpg,True,0.255
+external_repo (infested stem close-ups),36_jpg.rf.bc8ea59db03fe813edf071172963af1c.jpg,True,0.217
+external_repo (infested stem close-ups),rc_8_jpg.rf.dd6049eeeaeb23e7905a7b2262ad8253.jpg,True,0.293
+external_repo (infested stem close-ups),rb_6_jpg.rf.1f53374e734448415505df46c644ebaf.jpg,True,0.093
+external_repo (infested stem close-ups),rc_25_JPG.rf.c3178b653b7a064d77a2f6304acae7c9.jpg,False,0.003
+external_repo (infested stem close-ups),45_JPG.rf.a339aed77533f35ad5bd9eba48c0edef.jpg,True,0.363
+external_repo (infested stem close-ups),hf_22_jpg.rf.b6507212540643a266e38bd1d86fe737.jpg,True,0.213
+external_repo (infested stem close-ups),rc_20_jpg.rf.41e7178adb9792fdbe805e18d434a986.jpg,True,0.26
+external_repo (infested stem close-ups),16_jpg.rf.f3cf863ebe124a137320b840f1feb489.jpg,True,0.331
+external_repo (infested stem close-ups),rc_38_jpg.rf.5c2809398f5771c5552cae2603ad1593.jpg,True,0.114
+external_repo (infested stem close-ups),rb_34_jpg.rf.c5d5cd4e722406aade41ace96a998ce5.jpg,True,0.17
+external_repo (infested stem close-ups),hf_11_png.rf.4215dfc60233a51c5c1d7cd278fdef47.jpg,True,0.229
+external_repo (infested stem close-ups),vf_28_jpg.rf.7a3297056eeaf9cd363314f8097e2548.jpg,False,0.0
+external_repo (infested stem close-ups),vf_22_jpg.rf.3e75dd63acaa471c2097e9309e91f218.jpg,True,0.195
+external_repo (infested stem close-ups),vf_14_png.rf.65ff80aaf61046967215fe035e53da34.jpg,True,0.359
+external_repo (infested stem close-ups),8_jpg.rf.146ba2ea84d991ed93b50ebfde7a7e6b.jpg,True,0.276
+external_repo (infested stem close-ups),vf_19_jpg.rf.4bba0c934d9c96cb5b49cabaf7f87b55.jpg,False,0.0
+external_repo (infested stem close-ups),hf_31_jpg.rf.e2b1f06037036c07918887095b31af30.jpg,True,0.205
+external_repo (infested stem close-ups),rb_27_jpg.rf.84ecba1160710e4c139b545c005afc94.jpg,True,0.104
+external_repo (infested stem close-ups),rsh_1_JPG.rf.f0ac5a62290fa2c83a0db4ea4c8004ec.jpg,True,0.084
+external_repo (infested stem close-ups),rc_6_jpg.rf.4e510269179487457dd0416223a38936.jpg,True,0.145
+external_repo (infested stem close-ups),rb_40_JPG.rf.0e536dd39c2ab70e0f11ee39774fcfcf.jpg,False,0.019
+external_repo (infested stem close-ups),hf_37_jpg.rf.1e23001728c7c2518d785180fab85a53.jpg,True,0.266
+external_repo (infested stem close-ups),rc_18_jpg.rf.4cb7c5807b6bfca492b6de5b0401b1d0.jpg,False,0.0
+external_repo (infested stem close-ups),rb_43_JPG.rf.bae26576d9fe6cf7b07c8f49deb83f89.jpg,False,0.031
+external_repo (infested stem close-ups),35_jpg.rf.81ad151df4893de460b18aa8f6f2c435.jpg,True,0.258
