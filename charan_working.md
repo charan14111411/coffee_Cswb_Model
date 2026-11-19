@@ -272,3 +272,18 @@ an A/B run (same split, with vs without) on a close-up set that has real healthy
    that entry to `leela_working.md`? I have left it in place.
 3. The user dropped object detection (12 Nov); the 18 Nov entry recommends a detector — please
    keep follow-ups classification-only.
+
+### 2026-11-19 (later) — Does scan-time background removal fix the false alarms? No.
+
+Scored the 30 `test_new/` healthy close-ups with v1, original vs background removed by the
+branch's `remove_bg.apply(fill='blur')` at scan time only
+(`reports/scan_time_bg_test_new_19_11.csv`): the filter worked on 5 of 30; **all 30 stayed
+"WSB likely"** (the 5 processed ones still scored 0.97–1.00). Leela's run on infested stem
+close-ups (`reports/mask_experiment_images_16_11.csv`) showed the other half: 4 of 30 infested
+stems dropped to "no signs" and 6 to "inconclusive". So scan-time removal with the current model
+keeps every false alarm and adds misses.
+
+It can only work as a *new* stem model trained on processed photos of healthy **and** infested
+field stems — we have no healthy field stem close-ups yet. Suggested a guided-capture crop (stem
+inside an on-screen frame, crop to the frame) as a more reliable way to focus on the stem than
+GrabCut, identical in training and serving.
