@@ -4,7 +4,7 @@
 Both Leela's agent and Charan's agent read this file first, before doing anything else.
 It is committed to Git so it travels with every `git pull`.
 
-Last updated: **2026-11-12**
+Last updated: **2026-11-20**
 
 ---
 
@@ -63,6 +63,15 @@ Other properties of the dataset that matter:
 - ~~Every photo is a wide whole-plant / canopy shot taken from 2–3 m. There is not a
   single stem close-up in the training data. The model therefore learned "does this bush
   look unwell", not "does this stem have a borer hole".~~ (superseded by the line above)
+- **ADDED 2026-11-20 (Charan): most FIELD_ "Unhealthy" labels are unverified.**
+  `Final_cwsb_Data/labels.csv` column `field_evidence_tier` for the 268 `FIELD_` photos:
+  25 infected_confirmed, 27 infected_probable, 29 suspected_wsb, 160 needs_review,
+  **27 healthy_candidate**. All 27 healthy candidates sit in the v1 *train* split labelled
+  Unhealthy. All 34 `FIELD_` test photos (one pseudo-plant, `plant_054`) are needs_review /
+  suspected_wsb — none confirmed.
+- **Pseudo-plants are not plants.** `plant_053` is 120 consecutive field-trip frames
+  (`FIELD_IMG_1488`–`1617`), clearly many plants. "69 infected plants" is a filename-gap
+  count, not a plant count. The test split has **one** healthy plant (`plant_003`, 8 photos).
 - **Labels are plant-level, not photo-level.** Some photos of an infected plant show no
   visible evidence at all (see `plant_012` in section 7).
 - There are **no look-alike negatives** — no drought stress, nutrient deficiency,
@@ -179,11 +188,14 @@ Held-out test split, photo level (`models/v1/config.json`):
 Same test split, plant level (`models/v1/config.json`, plant score = max over photos):
 5 caught, 0 missed, 1 false alarm, 0 cleared, 2 inconclusive (8 plants).
 
-Headline: **accuracy 91.5%, recall 91.7%** (as reported on the test2 run at 768 px).
+Headline: **recall 93.6%, accuracy where decided 92.7%** on the 59 real held-out test photos
+at 768 px (`reports/cwsb_test_report_test_real_results.csv`). CORRECTED 2026-11-20: the
+earlier "accuracy 91.5%, recall 91.7%" does not match any committed CSV — 91.7% is the
+test-split accuracy *including* the brightness-modified copies (`cwsb_test_report.pdf` p1).
 On full-resolution originals the same test gives **95.9% recall**.
 
 > With 59 test photos the margin of error is roughly **±7 points**. The true accuracy could
-> be 85% or 97% and we cannot tell. Do not quote 91.5% as a precise figure.
+> be 85% or 97% and we cannot tell. Do not quote 92.7% as a precise figure.
 
 ---
 

@@ -287,3 +287,77 @@ It can only work as a *new* stem model trained on processed photos of healthy **
 field stems — we have no healthy field stem close-ups yet. Suggested a guided-capture crop (stem
 inside an on-screen frame, crop to the frame) as a more reliable way to focus on the stem than
 GrabCut, identical in training and serving.
+
+---
+
+## 2026-11-20 — Full end-to-end read of the repo (branch `charan_20/11`)
+
+`git pull`, read the four handover files plus Leela's new `docs/CHARAN_REFERENCE_NOTES.md`.
+`charan_20/11` = `leela_19_11` (`64628ac`, Leela's `version_rbn` work); merged `main` into it so
+my 19 Nov entries and CSVs are here too. Then read every script in `src/` (15) and
+`version_rbn/src/` (6), all 8 notebooks, the report CSVs/PDF summaries, `labels/`, `models/v1/`,
+the data/test folders and the unmerged `Charan_dev_12/11` branch. Nothing trained or re-scored;
+numbers below are recomputed from committed CSVs and files on this machine.
+
+### Checks that passed
+
+- Every `%%writefile` script in every notebook is byte-identical to `src/` / `version_rbn/src/`.
+- No notebook has saved outputs (so no run of `version_rbn` or the full pipeline is on record).
+- Held-out test numbers reproduce from `reports/cwsb_test_report_test_real_results.csv`:
+  44 caught / 3 missed / 1 false alarm / 7 cleared / 4 inconclusive.
+
+### New facts (PROJECT_STATE §2 and §6 updated)
+
+1. **Most FIELD_ "Unhealthy" labels are unverified.** `Final_cwsb_Data/labels.csv`:
+   25 confirmed, 27 probable, 29 suspected, 160 needs_review, **27 healthy_candidate** — all 27
+   healthy candidates are in v1's *train* split as Unhealthy. All 34 FIELD test photos are one
+   pseudo-plant (`plant_054`) and none is confirmed.
+2. **Headline in §6 was stale.** "accuracy 91.5%, recall 91.7%" matches no CSV; real held-out
+   test = recall 93.6%, accuracy where decided 92.7%. Corrected.
+3. **`reports/failure_analysis.csv` `verdict`/`outcome` columns use the OLD buggy thresholds**
+   (`analyze_failures.py` still derives them from infected quantiles). Only its `score` column
+   is safe to reuse; `set_thresholds.py` recomputes verdicts correctly.
+4. **`src/clean.py` reads `Data_final/`, which no longer exists here** (photos are in
+   `old_data/`). The reference notes say `clean.py` reads `old_data/` — it does not.
+5. **The reference notes say serving needs `models/v1/cwsb_v1.pt`** — the code loads
+   `models/v1/contender_B.pt` and `models/v1/config.json`, hard-coded. A v2 cannot be served
+   locally without editing `make_report_pdf.load_model` / `predict_folder.py`.
+6. **Model fingerprints differ between machines.** The `version_rbn` notebook lists
+   `contender_B.pt` md5 `f63f0c25…`; this machine's file is `dd043010af13ab32044e86a249c01af9`
+   (epoch 6, val PR-AUC 1.0). `cwsb_v1.onnx` also differs, expected: mine is from
+   `src/export_onnx.py` (float32 N×3×384×384 → `score`), Leela's from the ONNX notebook
+   (uint8 384×384×3 → `probabilities` + `feature_map`) — two incompatible files with one name.
+7. **`Charan_dev_12/11` was never merged into `main`.** It holds the frozen-split retrain
+   notebook (`colab/CWSB_retrain_colab.ipynb` + `splits/split_v1.csv`), `src/export_onnx.py`,
+   `reports/v1_on_external_yolo_closeups.csv` and the "classification only" decision. Leela's
+   newer notebooks re-split from scratch, so their old-vs-new comparison can put photos the old
+   model trained on into the new test set (inflates the old model's numbers).
+
+### Review of `version_rbn` (Leela, 20 Nov) — not run, code read only
+
+Idea: cut each photo into overlapping pieces (half the short edge, 50% overlap, ~15–21 per
+photo), two-round multiple-instance training (round 2 keeps the top-4 pieces of each infested
+photo, all pieces of healthy photos), score = max over pieces; 3 plant-level folds; `measure.py`
+background/blur tests; `look.py` PDF of the deciding piece. Good parts: the 64×64-blur test is a
+sharp diagnostic, folds fix the "2 healthy val photos" problem, v1 is never written.
+Concerns:
+
+1. Healthy pieces are all canopy; infested top pieces will be whatever looks least like canopy
+   (bark, hands, litter). MIL can select the framing shortcut instead of damage, and max-over-
+   pieces makes a single bark/soil piece enough to flag a healthy photo. The notebook's own
+   closing note says the same: the FIELD-camera/class confound cannot be trained away.
+2. `measure.py` scores all 28 healthy and 40 random infested photos from `split.csv`, including
+   training photos (v1's split, not the fold's), so its "false alarm 4%" and the fold scorecard
+   are partly measured on training data.
+3. Thresholds/early stopping still rest on ~3–4 healthy val photos per fold; the optimiser is
+   re-created every epoch (no LR schedule); sampler + class-weighted loss double-correct.
+4. No rule for which fold's model would ship.
+
+### For Leela
+
+1. Please compare `certutil -hashfile models\v1\contender_B.pt MD5` with
+   `dd043010af13ab32044e86a249c01af9`. If they differ we are scoring with different v1 weights
+   and numbers from the two machines are not comparable.
+2. Before trusting `version_rbn`'s scorecard, restrict `measure.py` to the fold's *test* photos.
+3. `Charan_dev_12/11` has a frozen-split retrain notebook — worth reusing so old-vs-new
+   comparisons are fair. Also note the 27 `healthy_candidate` FIELD photos trained as Unhealthy.
