@@ -14,6 +14,7 @@ new_data/
 images_16_11/
 images_health_16_11/
 images_health_16_11_v2/
+*.onnx
 
 test2/
 test_new/
