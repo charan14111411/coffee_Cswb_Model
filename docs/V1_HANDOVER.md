@@ -62,12 +62,27 @@ Pretrained on ImageNet-22k, fine-tuned on ImageNet-1k, then fine-tuned here.
 | `cwsb_v1.pt` | byte-identical copy of `contender_B.pt` |
 | `cwsb_v1.onnx` | same model exported to ONNX |
 | `config.json` | thresholds, the `remove_bg` flag, test results |
-| `training_result.json` | validation PR-AUC of both contenders |
+| `training_result.json` | validation PR-AUC — **only contender B**, plus backbone/img/seed |
 | `ood_reference.npz` | reference features for the out-of-distribution guard |
 
-SHA-256 of `contender_B.pt` starts `f63f0c25a012006f84cef9efd9edf59`.
+SHA-256 of `contender_B.pt` starts `f63f0c25a012006f84fcef9efd9edf59`.
 
 **`config.json` must always travel with the `.pt`.** Serving reads it.
+
+### If your copy differs
+
+`models/` is gitignored, so copies drift. Check yours against the reference machine:
+
+```
+contender_B.pt   f63f0c25a012006f84fcef9efd9edf59
+cwsb_v1.onnx     452863794c733678b5c4ea742a993cc4
+config.json      badeae29570e98f6a127455acbf06eec
+```
+
+If `config.json` has **no `remove_bg` key**, or `cwsb_v1.pt` is absent, you have an
+older copy. Nothing breaks — the code loads `contender_B.pt` directly and treats a
+missing `remove_bg` as `false` — but ask for the current `models/v1/` folder so both
+machines hold identical files.
 
 ---
 
@@ -123,8 +138,16 @@ CLASSES = {"Healthy": "Healthy", "Unhealthy(Infected)": "Unhealthy"}
 ```
 
 It does **not** read `old_data/`, even though `old_data/` has exactly the right shape.
-If the folder is missing, `clean.py` finds zero images without complaining and every
-later stage fails. First command on a fresh machine:
+With the folder missing it prints
+
+```
+Healthy: 0 images
+Unhealthy(Infected): 0 images
+IndexError: list index out of range        (clean.py line 84)
+```
+
+so it fails loudly rather than silently — but the message names neither the missing
+folder nor the cause. First command on a fresh machine:
 
 ```powershell
 Copy-Item -Recurse old_data Data_final
@@ -273,12 +296,28 @@ trained on full frames, so it is `false` and serving removes nothing.
 > **Never flip `remove_bg` by hand on a trained model.** Training and serving must
 > match. Turning it on for v1 was measured: infested stem scores fell from 0.97 to 0.20.
 
-Reports:
+Reports — both need data folders that are **not in git**:
 
 ```powershell
-python src/make_report_pdf.py          # Grad-CAM heatmap PDF
-python src/make_labels_proof_pdf.py    # box-overlap proof PDF, needs labels/
+python src/make_report_pdf.py          # needs test2/ with answer_key2.csv
+python src/make_labels_proof_pdf.py    # needs images_health_16_11_v2/ and labels/
 ```
+
+Both paths are hard-coded. Without those folders the scripts fail.
+
+### Serving a v2 takes a code change
+
+`src/predict_folder.py` and `src/make_report_pdf.py` hard-code v1:
+
+```python
+CFG = json.loads((ROOT / "models" / "v1" / "config.json").read_text())
+ck  = torch.load(ROOT / "models" / "v1" / "contender_B.pt", ...)
+```
+
+So putting `cwsb_v2.pt` and `config_v2.json` into `models/v2/` is **not enough** — those
+scripts keep scoring with v1 until the paths are changed. Either edit the two constants,
+or add a `--model` argument. Do this before claiming a v2 is in use, and check the
+printed model name in the output.
 
 ---
 
@@ -474,9 +513,15 @@ which are neither and must be copied.
 - It decides correctly on 198 of 211 labelled photos (93.8%), but it does **not**
   localise. Peak attention falls inside a labelled box only 9.7% of the time, against
   5.1% expected by chance.
-- It leans heavily on the background. With the stem blacked out entirely, 78 of 100
+- It leans heavily on the background. With the stem blacked out entirely, **78%** of
   infested photos are still called infested. Blurred down to 64x64, where a bore hole
-  cannot exist, 42 of 100 still are.
+  cannot exist, **42%** still are.
+
+  Method, so the numbers can be reproduced or disputed: 40 infested photos sampled with
+  seed 0 plus all 28 healthy photos, from `old_data/`, scored through v1's own eval
+  transform (`Resize(416) -> CenterCrop(384)`), counting scores >= 0.90. Reproduce with
+  `python version_rbn/src/measure.py --ckpt models/v1/contender_B.pt --mode whole
+  --source old_data`. Raise `--n-unhealthy` for a tighter estimate.
 - The root cause is resolution plus source bias. Photos are about 3000x4000 and the
   model sees 384x384, so a 100 px bore hole arrives as roughly 12 px. On top of that,
   268 infested photos come from one camera that never photographed a healthy plant, so

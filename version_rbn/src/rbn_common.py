@@ -38,6 +38,18 @@ eval_tf = transforms.Compose([
     transforms.Normalize(MEAN, STD),
 ])
 
+# v1's own evaluation transform, copied from src/train.py where the comment says
+# it "MUST stay identical in the API". A whole frame is NOT square, so squashing
+# it to 384x384 would show v1 a picture it was never trained or served on, and
+# the baseline numbers would not be v1's real behaviour. Used only for
+# --mode whole, which exists to measure v1.
+whole_tf = transforms.Compose([
+    transforms.Resize(IMG + 32),
+    transforms.CenterCrop(IMG),
+    transforms.ToTensor(),
+    transforms.Normalize(MEAN, STD),
+])
+
 train_tf = transforms.Compose([
     transforms.RandomResizedCrop(IMG, scale=(0.65, 1.0), ratio=(0.85, 1.18)),
     transforms.RandomHorizontalFlip(),
@@ -83,8 +95,8 @@ def load_model(ckpt_path, device=None):
 
 @torch.no_grad()
 def score_whole(model, pil, dev):
-    """v1 style: one score for the whole frame."""
-    x = eval_tf(pil).unsqueeze(0).to(dev)
+    """v1 style: one score for the whole frame, using v1's own eval transform."""
+    x = whole_tf(pil).unsqueeze(0).to(dev)
     return float(torch.softmax(model(x), 1)[0, 1])
 
 
