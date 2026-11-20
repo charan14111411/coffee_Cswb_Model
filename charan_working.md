@@ -208,3 +208,82 @@ boxed damage.
 3. If you want the localisation number to improve, it is a new model, not a
    tuning job — `make_labels_proof_pdf.py` is ready to measure any candidate the
    same way.
+
+---
+
+## 2026-11-19 — Review of branch `leela_19_11` (background removal)
+
+### What the branch contains
+
+One commit on top of `main` (`99e5308`): a new `colab/CWSB_background_filter_colab.ipynb`
+(check → run → preview → download, no training), and rewrites of
+`CWSB_full_pipeline_colab.ipynb` (from-scratch pipeline with `REMOVE_BACKGROUND = 'auto'`) and
+`CWSB_retrain_end2end_colab.ipynb` (adds `check()` and a Grad-CAM test-report cell).
+Embedded scripts are byte-identical to `src/`. **No notebook has saved outputs** — there is no
+run showing that removal improves anything.
+
+### What I measured (local, branch's `src/remove_bg.py`, same 900 px thumbnail as `check()`)
+
+Share of photos the filter actually processes (`reports/bg_removal_per_class_19_11.csv`):
+
+| Set | n | processed |
+|---|---|---|
+| Data_final Healthy (all canopy) | 28 | 7% |
+| Data_final Unhealthy `CB_` | 80 sampled | 1% |
+| Data_final Unhealthy `FIELD_` | 80 sampled | 30% |
+| test_new (healthy close-ups that v1 flags) | 30 | 20% |
+| external_repo (infested stem close-ups) | 80 sampled | 70% |
+
+Visual check: when it works (thick stem centred in frame) the cut-out is good. It fails on
+canopy, on branches with flowers/leaves and on thin stems in leaf litter.
+
+### The real finding: class-correlated framing
+
+Thumbnail grids of all of `Data_final` show the Healthy class is 28 leafy canopy shots, while
+roughly half of the 268 `FIELD_` infested photos are stem close-ups, split stems in hands and
+people. `PROJECT_STATE.md` said "not a single stem close-up" — corrected there. The model can
+tell the classes apart by framing, which explains healthy close-ups scoring 0.98+ and heat on
+background. Background removal does not remove that shortcut.
+
+### Verdict on the notebook
+
+Good engineering (leak-proof split, healthy-based thresholds, Grad-CAM report, ONNX parity,
+removal flag carried in `config.json`), but it cannot deliver the fix on current data:
+
+1. `'auto'` will answer NO on our data → removal off → effectively a v1 retrain.
+2. Forced ON, the filter mostly processes infested close-ups, so "blurred background" becomes
+   an infested-only feature — a new shortcut on top of the old one.
+3. `check()` samples 40 photos from both classes together; it never compares classes.
+4. When removal fails at serving time, `predict_folder.py` still scores the unprocessed photo
+   with a model trained on processed ones (should return "retake").
+5. Healthy tiles are cut after removal, so corner tiles become mostly blurred fill labelled healthy.
+6. ONNX parity covers the network only; GrabCut must be re-implemented identically on the
+   phone/API.
+7. Folder routing by name sends `images_health_16_11_v2` (211 confirmed-infested images) to Healthy.
+
+Removal also reverses the locked decision in `PROJECT_STATE.md` §9; it should not ship without
+an A/B run (same split, with vs without) on a close-up set that has real healthy close-ups.
+
+### For Leela
+
+1. Please read the corrected §2 bullet in `PROJECT_STATE.md` — it changes the diagnosis.
+2. A dated entry about the 18 Nov proof report was written into **`charan_working.md`** from your
+   machine. Per the handover rules each side only writes its own log; could your agent move
+   that entry to `leela_working.md`? I have left it in place.
+3. The user dropped object detection (12 Nov); the 18 Nov entry recommends a detector — please
+   keep follow-ups classification-only.
+
+### 2026-11-19 (later) — Does scan-time background removal fix the false alarms? No.
+
+Scored the 30 `test_new/` healthy close-ups with v1, original vs background removed by the
+branch's `remove_bg.apply(fill='blur')` at scan time only
+(`reports/scan_time_bg_test_new_19_11.csv`): the filter worked on 5 of 30; **all 30 stayed
+"WSB likely"** (the 5 processed ones still scored 0.97–1.00). Leela's run on infested stem
+close-ups (`reports/mask_experiment_images_16_11.csv`) showed the other half: 4 of 30 infested
+stems dropped to "no signs" and 6 to "inconclusive". So scan-time removal with the current model
+keeps every false alarm and adds misses.
+
+It can only work as a *new* stem model trained on processed photos of healthy **and** infested
+field stems — we have no healthy field stem close-ups yet. Suggested a guided-capture crop (stem
+inside an on-screen frame, crop to the frame) as a more reliable way to focus on the stem than
+GrabCut, identical in training and serving.

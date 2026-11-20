@@ -53,10 +53,16 @@ traces back to these two numbers.
 
 Other properties of the dataset that matter:
 
-- **Every photo is a wide whole-plant / canopy shot taken from 2–3 m.** There is not a
-  single stem close-up in the training data. The model therefore learned *"does this bush
-  look unwell"*, **not** *"does this stem have a borer hole"*. This was confirmed by
-  reading the actual images and by Grad-CAM, which puts its heat on foliage, not stems.
+- **CORRECTED 2026-11-19 (Charan): the framing differs by class.** The 28 Healthy photos are
+  all leafy canopy shots. The Unhealthy class is not: a thumbnail review of all 268 `FIELD_`
+  photos shows roughly half are stem close-ups, split stems held in hands, and people; the
+  202 `CB_` photos are mostly canopy and dry leaf-litter floor. So the model can separate the
+  classes by *framing* (close-up / bark / hands / litter = infested, dense foliage = healthy).
+  This is the most likely root cause of healthy close-ups scoring 0.98+ and of heat on
+  background. The earlier claim below ("not a single stem close-up") was wrong.
+- ~~Every photo is a wide whole-plant / canopy shot taken from 2–3 m. There is not a
+  single stem close-up in the training data. The model therefore learned "does this bush
+  look unwell", not "does this stem have a borer hole".~~ (superseded by the line above)
 - **Labels are plant-level, not photo-level.** Some photos of an infected plant show no
   visible evidence at all (see `plant_012` in section 7).
 - There are **no look-alike negatives** — no drought stress, nutrient deficiency,

@@ -1,0 +1,31 @@
+file,score_original,score_bg_removed,filter_ok,kept,verdict_original,verdict_bg_removed
+543.jpg,0.9907,0.9907,False,0.0,wsb,wsb
+Image (1).jpg,0.9907,0.9907,False,0.0,wsb,wsb
+Image (10).jpg,0.9856,0.9856,False,0.0,wsb,wsb
+Image (11).jpg,0.997,0.9727,True,0.118,wsb,wsb
+Image (12).jpg,0.9986,0.9967,True,0.084,wsb,wsb
+Image (13).jpg,0.9997,0.9997,False,0.0,wsb,wsb
+Image (14).jpg,0.9993,0.9993,False,0.0,wsb,wsb
+Image (15).jpg,0.9859,0.9883,True,0.272,wsb,wsb
+Image (16).jpg,0.9976,0.9976,False,0.0,wsb,wsb
+Image (17).jpg,0.9859,0.9883,True,0.272,wsb,wsb
+Image (18).jpg,0.9998,0.9998,False,0.0,wsb,wsb
+Image (19).jpg,0.9989,0.9994,True,0.087,wsb,wsb
+Image (2).jpg,0.999,0.999,False,0.0,wsb,wsb
+Image (2)1111.jpg,0.9892,0.9892,False,0.0,wsb,wsb
+Image (20).jpg,0.9995,0.9995,False,0.0,wsb,wsb
+Image (21).jpg,0.9952,0.9952,False,0.0,wsb,wsb
+Image (22).jpg,0.9994,0.9994,False,0.0,wsb,wsb
+Image (3).jpg,0.9939,0.9939,False,0.0,wsb,wsb
+Image (3)33333.jpg,0.9939,0.9939,False,0.0,wsb,wsb
+Image (4).jpg,0.9892,0.9892,False,0.0,wsb,wsb
+Image (4)44.jpg,0.9892,0.9892,False,0.0,wsb,wsb
+Image (5).jpg,0.997,0.997,False,0.0,wsb,wsb
+Image (5)11.jpg,0.9907,0.9907,False,0.0,wsb,wsb
+Image (6).jpg,0.9785,0.9785,False,0.027,wsb,wsb
+Image (6)33.jpg,0.9997,0.9997,False,0.0,wsb,wsb
+Image (7).jpg,0.9907,0.9907,False,0.0,wsb,wsb
+Image (8).jpg,0.9989,0.9989,False,0.016,wsb,wsb
+Image (9).jpg,0.9892,0.9892,False,0.0,wsb,wsb
+Image.jpg,0.9939,0.9939,False,0.0,wsb,wsb
+Image555556.jpg,0.9939,0.9939,False,0.0,wsb,wsb
