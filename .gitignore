@@ -18,7 +18,7 @@ images_health_16_11_v2/
 
 test2/
 test_new/
-
+Microscopic_level_data/
 # Generated report PDFs are large and regenerable; the CSVs are small, keep them
 reports/*.pdf
 
