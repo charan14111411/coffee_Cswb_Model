@@ -15,7 +15,7 @@ images_16_11/
 images_health_16_11/
 images_health_16_11_v2/
 *.onnx
-
+bark_044_region_01/
 test2/
 test_new/
 Microscopic_level_data/
