@@ -21,7 +21,7 @@ test_new/
 Microscopic_level_data/
 # Generated report PDFs are large and regenerable; the CSVs are small, keep them
 reports/*.pdf
-
+Resource_for_micro/
 # Python
 venv/
 .venv/
