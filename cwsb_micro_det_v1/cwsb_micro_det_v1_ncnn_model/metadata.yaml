@@ -1,0 +1,23 @@
+description: Ultralytics YOLO26n model trained on /content/cwsb_data.yaml
+author: Ultralytics
+date: "2026-11-26T07:04:01.323207+00:00"
+version: "8.4.219"
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+head: Detect
+batch: 1
+imgsz:
+- 512
+- 512
+names:
+  0: egg
+  1: frass
+  2: hole
+  3: larva
+  4: ridge
+args:
+  quantize: null
+channels: 3
+end2end: false

@@ -36,3 +36,9 @@ __pycache__/
 !NEXT_STEPS.md
 !leela_working.md
 !charan_working.md
+
+# Microscope data from the team (large, not for git)
+MICROSCOPIC_DATA/
+MICRO_SCOPIC_CLEANED/
+MICRO_ROBOFLOW_UPLOAD/
+MICRO_CLASS_CHECK/

@@ -1,0 +1,32 @@
+{
+ "name": "cwsb_micro_det_v1",
+ "base_model": "yolo26n.pt",
+ "image_size": 512,
+ "classes": [
+  "egg",
+  "frass",
+  "hole",
+  "larva",
+  "ridge"
+ ],
+ "suggested_confidence": 0.25,
+ "test_results": {
+  "split": "test",
+  "mAP50": 0.4464,
+  "mAP50_95": 0.2402,
+  "precision": 0.4634,
+  "recall": 0.5,
+  "per_class": {
+   "frass": 0.8342,
+   "hole": 0.505,
+   "ridge": 0.0
+  }
+ },
+ "onnx_check": {
+  "images": 24,
+  "same": 24,
+  "max_conf_diff": 0.0
+ },
+ "dataset": "roboflow varsapradaya/cwsb-detection_microscopic version 2",
+ "license_note": "Ultralytics YOLO is AGPL-3.0; check before selling a device"
+}

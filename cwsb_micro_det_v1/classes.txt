@@ -1,0 +1,5 @@
+egg
+frass
+hole
+larva
+ridge
